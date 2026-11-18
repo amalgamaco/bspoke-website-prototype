@@ -24,5 +24,5 @@ On Vercel it deploys as a static site with no build step.
 - The studios map uses Esri and OpenStreetMap tiles. The map provider for production is still to be defined.
 - Images and videos are B/SPOKE's current site material.
 - Not final copy or images:
-  - the app phone screens and the Recovery image are stand-ins;
+  - the Recovery image is a stand-in;
   - some copy changes are still waiting for B/SPOKE's approval.
