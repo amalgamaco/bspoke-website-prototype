@@ -643,16 +643,30 @@ function proc(el,scope){
   if(t==='sc-if'){const v=look(c.getAttribute('value').replace(/[{}]/g,''),scope);if(v){const frag=INERT.createDocumentFragment();const wrap=INERT.createElement('div');for(const k of c.childNodes)wrap.appendChild(k.cloneNode(true));proc(wrap,scope);while(wrap.firstChild)frag.appendChild(wrap.firstChild);c.replaceWith(frag)}else c.remove();continue}
   for(const a of Array.from(c.attributes)){const n=a.name,v=a.value;if(!v.includes('{{'))continue;const whole=v.match(/^\{\{([^}]+)\}\}$/);
    if(n==='ref'){const f=look(whole[1],scope);c.removeAttribute(n);if(typeof f==='function')refs.push([f,c]);continue}
-   if(EV[n]){const f=look(whole[1],scope);c.removeAttribute(n);if(typeof f==='function')c.addEventListener(EV[n],f);continue}
+   if(EV[n]){const f=look(whole[1],scope);c.removeAttribute(n);if(typeof f==='function'){c.addEventListener(EV[n],f);(c.__ls=c.__ls||[]).push([EV[n],f])}continue}
    if(whole){const val=look(whole[1],scope);if(val===false||val==null)c.removeAttribute(n);else c.setAttribute(n,val===true?'':String(val))}else c.setAttribute(n,interp(v,scope))}
   for(const a of Array.from(c.attributes)){if(EV[a.name]){c.removeAttribute(a.name)}}
   proc(c,scope)}}
+
+const KEEP_ATTR=new Set(['data-in']);
+function sameNode(a,b){return a.nodeType===b.nodeType&&(a.nodeType!==1||a.tagName===b.tagName)}
+function morphKids(oldP,newP,map){const o=Array.from(oldP.childNodes),n=Array.from(newP.childNodes);
+ for(let i=0;i<n.length;i++){const nn=n[i],on=o[i];
+  if(on&&sameNode(on,nn)){morphNode(on,nn,map)}else{const imp=document.importNode(nn,true);copyListeners(nn,imp,map);if(on)oldP.replaceChild(imp,on);else oldP.appendChild(imp)}}
+ for(let i=n.length;i<o.length;i++)o[i].remove()}
+function copyListeners(nn,imp,map){map.set(nn,imp);const a=nn.querySelectorAll?[nn,...nn.querySelectorAll('*')]:[nn];const b=imp.querySelectorAll?[imp,...imp.querySelectorAll('*')]:[imp];a.forEach((x,i)=>{map.set(x,b[i]);(x.__ls||[]).forEach(([t,f])=>{b[i].addEventListener(t,f);(b[i].__ls=b[i].__ls||[]).push([t,f])})})}
+function morphNode(on,nn,map){map.set(nn,on);
+ if(on.nodeType===3||on.nodeType===8){if(on.data!==nn.data)on.data=nn.data;return}
+ for(const a of Array.from(on.attributes)){if(!nn.hasAttribute(a.name)&&!KEEP_ATTR.has(a.name))on.removeAttribute(a.name)}
+ for(const a of Array.from(nn.attributes)){if(on.getAttribute(a.name)!==a.value)on.setAttribute(a.name,a.value)}
+ (on.__ls||[]).forEach(([t,f])=>on.removeEventListener(t,f));on.__ls=[];(nn.__ls||[]).forEach(([t,f])=>{on.addEventListener(t,f);on.__ls.push([t,f])});
+ morphKids(on,nn,map)}
 let refs=[];
 function render(){refs=[];const vals=comp.renderVals();const clone=tplEl.content.cloneNode(true);const wrap=INERT.createElement('div');wrap.appendChild(INERT.importNode(clone,true));
  wrap.querySelectorAll('helmet').forEach(h=>h.remove());proc(wrap,vals);
  // preserve data-in attrs
  const keep=new Map();root.querySelectorAll('[data-in]').forEach(e=>{});
- root.replaceChildren(...wrap.childNodes);refs.forEach(([f,e])=>f(e));if(window.__afterRender)window.__afterRender()}
+ if(!root.firstChild){root.replaceChildren(...wrap.childNodes);refs.forEach(([f,e])=>f(e))}else{const map=new Map();morphKids(root,wrap,map);refs.forEach(([f,e])=>f(map.get(e)||e))}if(window.__afterRender)window.__afterRender()}
 window.addEventListener('DOMContentLoaded',()=>{tplEl=document.getElementById('tpl');
  const h=document.createElement('div');h.innerHTML=tplEl.innerHTML.match(/<helmet>([\s\S]*?)<\/helmet>/)[1];for(const n of Array.from(h.children))document.head.appendChild(n);
  root=document.getElementById('root');const p={};comp=new Component(p);render();if(comp.componentDidMount)comp.componentDidMount()});
