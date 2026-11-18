@@ -1,0 +1,832 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>B/SPOKE — Home</title><style>body{margin:0;background:#000}</style></head><body><template id="tpl">
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Figtree:ital,wght@0,300;0,400;1,300;1,400&amp;family=Inter+Tight:wght@300;400;500;600&amp;family=Inter:opsz,wght@14..32,400..500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000}
+h1,h2,h3{font-family:Figtree,sans-serif;font-weight:300;text-wrap:balance}
+p,li,td{text-wrap:pretty}
+b,strong{font-weight:400}
+a{color:#FFFFFF;text-decoration:none}a:hover{color:#FFC2C2}
+input::placeholder{color:#737373}
+summary{list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .chev{transform:rotate(45deg)}
+.more-d{interpolate-size:allow-keywords}
+.more-d::details-content{height:0;overflow:hidden;transition:height .45s cubic-bezier(.2,.8,.2,1),content-visibility .45s allow-discrete}
+.more-d[open]::details-content{height:auto}
+@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes rise{from{transform:translateY(112%)}to{transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes blurIn{from{opacity:0;filter:blur(18px)}to{opacity:1;filter:blur(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:none}}
+@keyframes hdrIn{from{opacity:0;transform:translateY(-100%)}to{opacity:1;transform:none}}
+@keyframes breathe{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes zoomOut{from{transform:scale(1.22)}to{transform:scale(1)}}
+@keyframes drift{from{transform:translateY(-7%) scale(1.16)}to{transform:translateY(7%) scale(1.16)}}
+@keyframes fromL{from{opacity:0;transform:translateX(-80px) rotate(-1.5deg)}to{opacity:1;transform:none}}
+@keyframes fromR{from{opacity:0;transform:translateX(80px) rotate(1.5deg)}to{opacity:1;transform:none}}
+@keyframes bigIn{from{opacity:0;transform:scale(.82);filter:blur(14px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes offerIn{from{opacity:0;transform:translate(-50%,40px) scale(.96);visibility:hidden}1%{visibility:visible}to{opacity:1;transform:translate(-50%,0);visibility:visible}}
+@keyframes cardL{from{opacity:0;transform:translate(-60px,140px) scale(.9);clip-path:inset(14% 10% 0 10% round 20px)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0 round 20px)}}
+@keyframes cardR{from{opacity:0;transform:translate(60px,200px) scale(.9);clip-path:inset(14% 10% 0 10% round 20px)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0 round 20px)}}
+@keyframes cardW{from{opacity:0;transform:translateY(160px) scale(.94);clip-path:inset(10% 22% 0 22% round 20px)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0 round 20px)}}
+@keyframes swap{0%{opacity:0;transform:scale(1.15)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@keyframes pillIn{from{clip-path:inset(0 50% 0 50% round 999px);opacity:0}to{clip-path:inset(0 0 0 0 round 999px);opacity:1}}
+@keyframes draw{from{stroke-dashoffset:700}to{stroke-dashoffset:0}}
+@keyframes drop{0%{opacity:0;transform:translateY(var(--y0,-220px)) rotate(var(--r0,-10deg)) scale(.92)}60%{opacity:1}82%{transform:translateY(8px) rotate(var(--r1,0deg)) scale(1)}100%{opacity:1;transform:translateY(0) rotate(var(--r1,0deg)) scale(1)}}
+@keyframes riseBlur{from{transform:translateY(115%) skewY(6deg);filter:blur(14px)}60%{filter:blur(2px)}to{transform:none;filter:blur(0)}}
+@keyframes textShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes bgm1{0%,100%{translate:0 0;scale:1}50%{translate:35vw -10%;scale:1.15}}
+@keyframes bgm2{0%,100%{translate:0 0;scale:1}50%{translate:-30vw -8%;scale:.9}}
+@keyframes bgm3{0%,100%{translate:0 0;opacity:.6}50%{translate:-20vw 20%;opacity:1}}
+@keyframes vidOpen{from{clip-path:inset(0 50% 0 50% round 999px);opacity:.4}to{clip-path:inset(0 0 0 0 round 999px);opacity:1}}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -14px}}
+@keyframes beamIn{from{opacity:0;scale:1 0}to{opacity:1;scale:1 1}}
+@keyframes blobA{0%,100%{translate:0 0;scale:1}33%{translate:6vw 5vh;scale:1.08}66%{translate:2vw -3vh;scale:.94}}
+@keyframes blobB{0%,100%{translate:0 0;scale:1}40%{translate:-7vw -5vh;scale:1.1}75%{translate:-2vw 3vh;scale:.95}}
+@keyframes blobC{0%,100%{translate:0 0;scale:1}50%{translate:-5vw 6vh;scale:1.12}}
+@keyframes ringSpin{from{transform:rotateY(0deg)}to{transform:rotateY(-360deg)}}
+@keyframes marqueeR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes stackOut{to{filter:blur(10px) brightness(.4);scale:.9}}
+@keyframes waveX{from{transform:translateX(0)}to{transform:translateX(-1440px)}}
+@keyframes waveSwap{0%{transform:translateY(70px)}6%,30%{transform:translateY(0)}36%,100%{transform:translateY(-70px)}}
+@keyframes gsA{0%,100%{stop-color:#FF4848}50%{stop-color:#E01C1C}}
+@keyframes gsB{0%,100%{stop-color:#B81E1E}50%{stop-color:#FF7070}}
+@keyframes gsC{0%,100%{stop-color:#FF7070}50%{stop-color:#5B1515}}
+@keyframes heroOut{to{opacity:0;transform:translateY(-70px) scale(.95);filter:blur(8px)}}
+@keyframes hdrBg{from{background-color:rgba(0,0,0,0);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0);border-bottom-color:rgba(255,255,255,0)}to{background-color:rgba(0,0,0,.42);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom-color:rgba(255,255,255,.14)}}
+.kb{animation:kb 3s cubic-bezier(.2,.7,.2,1) both}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.04em .1em .22em;margin:0 -.06em -.14em}
+.w>span{display:inline-block;animation:rise 1.1s cubic-bezier(.2,.85,.2,1) both}
+.rot{display:inline-grid;justify-items:start;text-align:left;overflow:hidden;vertical-align:bottom;padding:.04em .06em .22em;margin-bottom:-.18em}
+.rotw{grid-area:1/1;transform:translateY(115%);animation:rotWord 8s cubic-bezier(.7,0,.2,1) infinite,rotGrad 6s ease-in-out infinite;padding:0 .08em .24em;margin-bottom:-.24em;background-image:linear-gradient(100deg,#FFFFFF 0%,#FFC2C2 22%,#FF7070 48%,#FF4848 70%,#FFE0E0 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes rotGrad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes rotWord{0%{transform:translateY(115%)}4.5%,25.5%{transform:none}30%,100%{transform:translateY(-115%)}}
+.fu{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) both}
+.bi{animation:blurIn 1.3s ease both}
+.si{animation:slideIn 1s cubic-bezier(.2,.8,.2,1) both}
+.glow{animation:breathe 6s ease-in-out infinite}
+.blobA{animation:blobA 22s ease-in-out infinite}
+.blobB{animation:blobB 26s ease-in-out infinite}
+.blobC{animation:blobC 18s ease-in-out infinite}
+.float{animation:floaty 7s ease-in-out infinite}
+@keyframes jMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.jtrack{animation:jMove 40s linear infinite}
+.jimg{transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.jtrack a:hover .jimg{transform:scale(1.05)}
+.jwrap:hover .jtrack,.jwrap:focus-within .jtrack{animation-play-state:paused}
+@keyframes accMoveA{0%,100%{translate:18vw -6vh;scale:1}30%{translate:-6vw 10vh;scale:1.15}65%{translate:10vw 14vh;scale:.9}}
+@keyframes accMoveB{0%,100%{translate:0 0;scale:1}45%{translate:22vw -24vh;scale:1.2}75%{translate:8vw 4vh;scale:.9}}
+.accA{animation:accMoveA 16s ease-in-out infinite}.accB{animation:accMoveB 21s ease-in-out infinite}
+.wave{animation:waveX 40s linear infinite}
+section[data-bg]{margin-bottom:clamp(56px,7vw,112px)}
+.snakeIn{transform:translateX(-110%);transition:transform 1.6s cubic-bezier(.34,1.3,.64,1)}
+.snakeBand[data-in] .snakeIn{transform:none}
+@keyframes waveOsc{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-18px) rotate(-1.2deg)}75%{transform:translateY(16px) rotate(1deg)}}
+.wsw{transform-box:view-box;transform:translateY(70px);animation:waveSwap 12s cubic-bezier(.7,0,.2,1) infinite both}
+.gs1{animation:gsA 9s ease-in-out infinite}.gs2{animation:gsB 9s ease-in-out infinite}.gs3{animation:gsC 9s ease-in-out infinite}
+.chg{background-image:linear-gradient(90deg,#FF4848 0%,#FF8A5C 45%,#FF7070 70%,#B81E1E 100%);background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent}
+.roll .ch{transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.prow:hover .roll .ch,.prow.on .roll .ch{transform:translateY(-1.1em)}
+.prow .parrow{transition:transform .45s cubic-bezier(.2,.8,.2,1),color .4s}
+.prow:hover .parrow,.prow.on .parrow{transform:translateX(8px)}
+.wvl>span,.wv>span:not(.pill){display:inline-block;overflow:hidden;vertical-align:bottom;padding:.04em .08em .2em;margin:0 -.08em -.14em}
+.wvl>span>span,.wv>span>span{display:inline-block}
+.wvi{transform:translateY(112%);transition:transform 1s cubic-bezier(.2,.85,.2,1)}
+[data-in] .wvi{transform:none}
+.io{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.85,.2,1)}
+.io[data-in]{opacity:1;transform:none}
+.rts .w{padding-top:.16em;margin-top:-.16em}
+.rts .w>.wr{animation:textShift 8s ease-in-out infinite;transform:translateY(115%);filter:blur(6px);transition:transform .9s cubic-bezier(.34,1.56,.64,1),filter .6s ease}
+.rts[data-in] .w>.wr{transform:none;filter:blur(0)}
+.rts .rvid{clip-path:inset(0 50% 0 50% round 999px);transform:scale(.6);opacity:.4;transition:clip-path .8s cubic-bezier(.16,1,.3,1) .7s,transform .9s cubic-bezier(.34,1.56,.64,1) .7s,opacity .6s ease .7s}
+.rts[data-in] .rvid{clip-path:inset(0 0 0 0 round 999px);transform:none;opacity:1}
+.rtsAfter{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.rts[data-in]~.rtsAfter{opacity:1;transform:none;transition:opacity .8s ease 2.1s,transform .8s cubic-bezier(.16,1,.3,1) 2.1s}
+.rts[data-in]~.rtsCta{transition-delay:2.3s,2.3s}
+.wr{display:inline-block;background:linear-gradient(100deg,#FFFFFF 0%,#FFE0E0 25%,#FF7070 50%,#FFC2C2 75%,#FFFFFF 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:textShift 8s ease-in-out infinite;padding:0 .04em}
+.bgm1{animation:bgm1 16s ease-in-out infinite}
+.bgm2{animation:bgm2 20s ease-in-out infinite}
+.bgm3{animation:bgm3 13s ease-in-out infinite}
+.ring{animation:ringSpin 40s linear infinite}
+.ring:hover{animation-play-state:paused}
+.swap{opacity:0;animation:swap 10s ease-in-out infinite}
+.swap:first-child{opacity:1}
+.hdr{animation:hdrIn .9s cubic-bezier(.2,.8,.2,1) both}
+.sl{animation:scrollLine 2.2s ease-in-out infinite}
+.marq{animation:marquee 32s linear infinite}
+.marqR{animation:marqueeR 38s linear infinite}
+.btn{transition:transform .35s cubic-bezier(.2,.8,.2,1),background-color .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.glass:hover{background-color:rgba(255,255,255,.22)!important}
+.card img{transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.card:hover img{transform:scale(1.07)}
+.card .more{transition:background-color .3s,color .3s}
+.card:hover .more{background-color:#FFFFFF!important;color:#000000}
+.arrow svg{transition:transform .35s}
+.arrow:hover svg{transform:translateX(6px)}
+@supports (animation-timeline: view()){
+.hdrBg{animation:hdrIn .9s cubic-bezier(.2,.8,.2,1) both,hdrBg linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 280px}
+.heroOut{animation:heroOut linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+.rv{animation:fadeUp linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+.rvb{animation:blurIn linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
+.zo{animation:zoomOut linear both;animation-timeline:view();animation-range:entry 0% cover 55%}
+.par{animation:drift linear both;animation-timeline:view();animation-range:cover}
+.fl{animation:fromL linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+.fr{animation:fromR linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+.big{animation:bigIn linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+.cl{animation:cardL linear both;animation-timeline:view();animation-range:entry 0% cover 42%}
+.cr{animation:cardR linear both;animation-timeline:view();animation-range:entry 0% cover 48%}
+.cw{animation:cardW linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+.pill{animation:pillIn linear both;animation-timeline:view();animation-range:entry 30% cover 50%}
+.route{animation:draw linear both;animation-timeline:view();animation-range:entry 20% cover 60%}
+.drop{animation:drop linear both;animation-timeline:--soc}
+.beam{transform-origin:top;animation:beamIn linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+@keyframes growIn{from{transform:scale(.82);border-radius:56px;opacity:.6}to{transform:none;border-radius:28px;opacity:1}}
+.grow{transform-origin:50% 100%;animation:growIn cubic-bezier(.16,1,.3,1) both;animation-timeline:view();animation-range:entry 0% cover 45%}
+.offer{animation:offerIn linear both;animation-timeline:scroll(root);animation-range:55vh 85vh}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.wvi,.io,.rts .w>.wr{transform:none!important;opacity:1!important;filter:none!important}.rts .rvid{clip-path:none!important;opacity:1!important}.rtsAfter{opacity:1!important;transform:none!important}.snakeIn{transform:none!important}.rotw:first-child{transform:none}}
+
+@media (max-width: 760px){
+.m-hide{display:none!important}
+.m-menu{display:flex!important}
+.hdr{padding:12px 20px!important;flex-wrap:nowrap!important}
+.m-pin{height:auto!important}
+.m-sticky{position:relative!important;top:auto!important;height:auto!important;max-height:none!important;min-height:0!important;gap:32px!important}
+.m-card{position:relative!important;top:auto!important;filter:none!important;scale:1!important;height:auto!important;min-height:440px}
+.m-phones{flex-basis:100%!important;gap:20px!important;padding-bottom:48px!important}
+.m-phones>div{flex:0 0 40%!important;max-width:170px}
+.m-map{height:auto!important;width:100%!important}
+.m-scard{margin-left:0!important;margin-top:20px;max-width:none!important}
+.m-tag{left:12px!important}
+[style*="padding: 120px 40px"]{padding:72px 20px!important}
+[style*="padding: 112px 40px"],[style*="padding: 104px 40px"]{padding:64px 20px!important}
+[style*="padding: 88px 40px"]{padding:56px 20px!important}
+[style*="padding: 24px 40px"],[style*="padding: 28px 40px"]{padding:24px 20px!important}
+[style*="padding: 0 40px"]{padding-left:20px!important;padding-right:20px!important}
+[style*="padding: 56px 56px 0"]{padding:32px 22px 0!important}
+.grow{min-height:0!important}
+.offer{left:12px!important;right:12px!important;bottom:12px!important;transform:none!important;width:auto!important;max-width:none!important}
+.offer{flex-wrap:nowrap!important;justify-content:space-between!important;gap:10px!important;padding:10px 10px 10px 16px!important;border-radius:20px!important}
+.offer>.glow{display:none}
+.offer>span:nth-child(2) span:last-child{font-size:15px!important}
+.offer>span:nth-child(2) span:first-child{font-size:11px!important}
+.offer>a{padding:12px 16px!important;font-size:14px!important;white-space:nowrap}
+.offer>button{width:40px!important;height:40px!important}
+.m-map line,.m-map svg>circle[r="4"]{display:none}
+section[data-bg]{margin-bottom:40px}
+.roll{font-size:40px!important}
+}
+.m-menu{display:none}
+</style>
+</helmet>
+<div style="background-color: {{pageBg}}; transition: background-color .9s ease; color: #FFFFFF; font-family: 'Inter Tight', sans-serif; overflow-x: clip">
+
+<header class="hdr hdrBg" style="position: sticky; top: 0; z-index: 20; min-height: 76px; margin-bottom: -76px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 12px 40px; box-sizing: border-box; background-color: rgba(0,0,0,0.22); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.18)">
+<a href="#" aria-label="B/SPOKE home"><img src="/assets/logo-white.png" alt="B/SPOKE" style="height: 22px; width: auto; display: block"></a>
+<nav class="m-hide" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 14px; font-weight: 300">
+<a href="#">New? Start here</a>
+<a href="#">Programs ▾</a>
+<a href="#">Studios ▾</a>
+<a href="#">Memberships</a>
+<a href="#">Pricing</a>
+<a href="#">Wellness retreats</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px">
+<a href="#" class="m-hide" style="font-size: 14px; font-weight: 300">Login</a>
+<a href="#" class="btn glass" style="padding: 11px 22px; border-radius: 999px; background-color: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(12px); font-size: 14px; font-weight: 600">Buy</a>
+<a href="#" class="btn" style="padding: 12px 24px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 14px; font-weight: 600">Book</a>
+<button type="button" class="m-menu" aria-label="Open menu" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); background-color: rgba(255,255,255,0.12); color: #FFFFFF; cursor: pointer; align-items: center; justify-content: center; padding: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg></button>
+</div>
+</header>
+
+<section style="position: relative; height: 100vh; min-height: 620px; max-height: 1400px; display: flex; flex-direction: column; overflow: hidden">
+<video ref="{{setVid}}" src="/assets/hero-hq.mp4" poster="/assets/hero-hq-poster.jpg" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="auto" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; "></video>
+<div aria-hidden="true" style="position: absolute; inset: 0; background-color: rgba(0,0,0,0.5)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(50% 40% at 50% 50%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%), linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.45) 100%)"></div>
+<div class="heroOut" style="position: relative; z-index: 2; flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0">
+<div style="flex: 1 1 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: clamp(16px, 3vh, 28px); padding: 96px 24px 16px; min-height: 0">
+<h1 aria-label="Come as you are, leave stronger." style="text-shadow: 0 2px 30px rgba(0,0,0,0.35); margin: 0; font-size: clamp(48px, min(7.6vw, 12vh), 112px); line-height: 0.95; font-weight: 400; letter-spacing: -0.045em; max-width: 1000px"><span class="w"><span style="animation-delay: 0.25s">Come</span></span> <span class="w"><span style="animation-delay: 0.35s">as</span></span> <span class="w"><span style="animation-delay: 0.45s">you</span></span> <span class="w"><span style="animation-delay: 0.55s">are,</span></span><br><span class="w"><span style="animation-delay: 0.65s"><i>leave</i></span></span> <span class="w"><span style="animation-delay: 0.75s"><i class="rot"><span class="rotw" aria-hidden="true" style="animation-delay: 0.64s">stronger.</span><span class="rotw" aria-hidden="true" style="animation-delay: 2.64s">happier.</span><span class="rotw" aria-hidden="true" style="animation-delay: 4.64s">lighter.</span><span class="rotw" aria-hidden="true" style="animation-delay: 6.64s">inspired.</span></i></span></span></h1>
+<p class="bi" style="margin: 0; font-size: clamp(16px, 2.2vh, 20px); line-height: 1.5; color: #E3E3E3; max-width: 520px; animation-delay: .9s"><span style="color: #FF9999; font-weight: 300">Strength, yoga, pilates + ride</span> workout classes for all levels, at 5 studios across Massachusetts.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<a href="#" class="btn fu" style="padding: 16px 30px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 16px; font-weight: 600; animation-delay: 1.1s">Book a class</a>
+<a href="#intro" class="btn glass fu arrow" style="padding: 16px 26px; border-radius: 999px; background-color: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(14px); font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 10px; animation-delay: 1.22s">Intro offer<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 0 40px clamp(20px, 4vh, 40px)">
+<div class="fu" style="display: flex; align-items: center; gap: 14px; font-size: 13px; color: #D3D3D3; animation-delay: 1.4s">
+<span aria-hidden="true" style="width: 1px; height: 40px; background: rgba(255,255,255,0.25); position: relative; overflow: hidden"><span class="sl" style="position: absolute; inset: 0; background: #FFFFFF"></span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span>5 studios</span><span style="color: #A3A3A3">Boston · Cape Cod · Wellesley</span></span>
+</div>
+<a href="#" class="si card" style="width: 340px; max-width: 100%; display: flex; gap: 14px; align-items: center; padding: 10px; box-sizing: border-box; border-radius: 14px; background-color: rgba(20,20,20,0.5); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(16px); animation-delay: 1.5s">
+<span style="width: 96px; height: 72px; border-radius: 8px; overflow: hidden; flex: none"><img src="/assets/difference-card-4.jpg" alt="The B/SPOKE community at the studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 12px; color: #FF9999">Latest · holiday sale</span>
+<span style="font-size: 15px; line-height: 1.3; font-weight: 600">50% off your first month of membership</span>
+<span style="font-size: 12px; color: #D3D3D3">Code HOLIDAY26 · 25% off credit packs</span>
+</span>
+</a>
+</div>
+</div>
+</section>
+<div class="snakeBand" aria-hidden="true" style="position: relative; height: 290px; overflow: hidden; pointer-events: none; margin: -40px 0 -70px">
+<div class="snakeIn" style="position: absolute; inset: 0">
+<div class="wave" style="position: absolute; left: 0; top: 0; width: 2880px; height: 290px">
+<div style="position: absolute; left: 0; top: 0; width: 2880px; height: 290px; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); background-color: rgba(255,72,72,0.06); mask: url(#bandMask); -webkit-mask: url(#bandMask)"></div>
+<svg width="2880" height="290" viewBox="0 0 2880 290" style="position: relative; z-index: 1; display: block; overflow: visible">
+<defs>
+<linearGradient id="bandGrad" x1="0" y1="0" x2="2880" y2="0" gradientUnits="userSpaceOnUse"><stop class="gs1" offset="0" stop-color="#FF4848"></stop><stop class="gs2" offset="0.25" stop-color="#B81E1E"></stop><stop class="gs3" offset="0.5" stop-color="#FF7070"></stop><stop class="gs2" offset="0.75" stop-color="#B81E1E"></stop><stop class="gs1" offset="1" stop-color="#FF4848"></stop></linearGradient>
+<path id="wavePath" d="M0 145.0 L16 158.2 L32 171.2 L48 183.6 L64 195.3 L80 206.1 L96 215.6 L112 223.8 L128 230.4 L144 235.4 L160 238.6 L176 239.9 L192 239.5 L208 237.2 L224 233.1 L240 227.3 L256 219.9 L272 211.0 L288 200.8 L304 189.6 L320 177.5 L336 164.8 L352 151.6 L368 138.4 L384 125.2 L400 112.5 L416 100.4 L432 89.2 L448 79.0 L464 70.1 L480 62.7 L496 56.9 L512 52.8 L528 50.5 L544 50.1 L560 51.4 L576 54.6 L592 59.6 L608 66.2 L624 74.4 L640 83.9 L656 94.7 L672 106.4 L688 118.8 L704 131.8 L720 145.0 L736 158.2 L752 171.2 L768 183.6 L784 195.3 L800 206.1 L816 215.6 L832 223.8 L848 230.4 L864 235.4 L880 238.6 L896 239.9 L912 239.5 L928 237.2 L944 233.1 L960 227.3 L976 219.9 L992 211.0 L1008 200.8 L1024 189.6 L1040 177.5 L1056 164.8 L1072 151.6 L1088 138.4 L1104 125.2 L1120 112.5 L1136 100.4 L1152 89.2 L1168 79.0 L1184 70.1 L1200 62.7 L1216 56.9 L1232 52.8 L1248 50.5 L1264 50.1 L1280 51.4 L1296 54.6 L1312 59.6 L1328 66.2 L1344 74.4 L1360 83.9 L1376 94.7 L1392 106.4 L1408 118.8 L1424 131.8 L1440 145.0 L1456 158.2 L1472 171.2 L1488 183.6 L1504 195.3 L1520 206.1 L1536 215.6 L1552 223.8 L1568 230.4 L1584 235.4 L1600 238.6 L1616 239.9 L1632 239.5 L1648 237.2 L1664 233.1 L1680 227.3 L1696 219.9 L1712 211.0 L1728 200.8 L1744 189.6 L1760 177.5 L1776 164.8 L1792 151.6 L1808 138.4 L1824 125.2 L1840 112.5 L1856 100.4 L1872 89.2 L1888 79.0 L1904 70.1 L1920 62.7 L1936 56.9 L1952 52.8 L1968 50.5 L1984 50.1 L2000 51.4 L2016 54.6 L2032 59.6 L2048 66.2 L2064 74.4 L2080 83.9 L2096 94.7 L2112 106.4 L2128 118.8 L2144 131.8 L2160 145.0 L2176 158.2 L2192 171.2 L2208 183.6 L2224 195.3 L2240 206.1 L2256 215.6 L2272 223.8 L2288 230.4 L2304 235.4 L2320 238.6 L2336 239.9 L2352 239.5 L2368 237.2 L2384 233.1 L2400 227.3 L2416 219.9 L2432 211.0 L2448 200.8 L2464 189.6 L2480 177.5 L2496 164.8 L2512 151.6 L2528 138.4 L2544 125.2 L2560 112.5 L2576 100.4 L2592 89.2 L2608 79.0 L2624 70.1 L2640 62.7 L2656 56.9 L2672 52.8 L2688 50.5 L2704 50.1 L2720 51.4 L2736 54.6 L2752 59.6 L2768 66.2 L2784 74.4 L2800 83.9 L2816 94.7 L2832 106.4 L2848 118.8 L2864 131.8 L2880 145.0" fill="none"><animate id="snakeAnim" attributeName="d" dur="2.4s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0.000;0.143;0.286;0.429;0.571;0.714;0.857;1.000" keySplines=".37 0 .63 1;.37 0 .63 1;.37 0 .63 1;.37 0 .63 1;.37 0 .63 1;.37 0 .63 1;.37 0 .63 1" values="M0 145.0 L16 158.2 L32 171.2 L48 183.6 L64 195.3 L80 206.1 L96 215.6 L112 223.8 L128 230.4 L144 235.4 L160 238.6 L176 239.9 L192 239.5 L208 237.2 L224 233.1 L240 227.3 L256 219.9 L272 211.0 L288 200.8 L304 189.6 L320 177.5 L336 164.8 L352 151.6 L368 138.4 L384 125.2 L400 112.5 L416 100.4 L432 89.2 L448 79.0 L464 70.1 L480 62.7 L496 56.9 L512 52.8 L528 50.5 L544 50.1 L560 51.4 L576 54.6 L592 59.6 L608 66.2 L624 74.4 L640 83.9 L656 94.7 L672 106.4 L688 118.8 L704 131.8 L720 145.0 L736 158.2 L752 171.2 L768 183.6 L784 195.3 L800 206.1 L816 215.6 L832 223.8 L848 230.4 L864 235.4 L880 238.6 L896 239.9 L912 239.5 L928 237.2 L944 233.1 L960 227.3 L976 219.9 L992 211.0 L1008 200.8 L1024 189.6 L1040 177.5 L1056 164.8 L1072 151.6 L1088 138.4 L1104 125.2 L1120 112.5 L1136 100.4 L1152 89.2 L1168 79.0 L1184 70.1 L1200 62.7 L1216 56.9 L1232 52.8 L1248 50.5 L1264 50.1 L1280 51.4 L1296 54.6 L1312 59.6 L1328 66.2 L1344 74.4 L1360 83.9 L1376 94.7 L1392 106.4 L1408 118.8 L1424 131.8 L1440 145.0 L1456 158.2 L1472 171.2 L1488 183.6 L1504 195.3 L1520 206.1 L1536 215.6 L1552 223.8 L1568 230.4 L1584 235.4 L1600 238.6 L1616 239.9 L1632 239.5 L1648 237.2 L1664 233.1 L1680 227.3 L1696 219.9 L1712 211.0 L1728 200.8 L1744 189.6 L1760 177.5 L1776 164.8 L1792 151.6 L1808 138.4 L1824 125.2 L1840 112.5 L1856 100.4 L1872 89.2 L1888 79.0 L1904 70.1 L1920 62.7 L1936 56.9 L1952 52.8 L1968 50.5 L1984 50.1 L2000 51.4 L2016 54.6 L2032 59.6 L2048 66.2 L2064 74.4 L2080 83.9 L2096 94.7 L2112 106.4 L2128 118.8 L2144 131.8 L2160 145.0 L2176 158.2 L2192 171.2 L2208 183.6 L2224 195.3 L2240 206.1 L2256 215.6 L2272 223.8 L2288 230.4 L2304 235.4 L2320 238.6 L2336 239.9 L2352 239.5 L2368 237.2 L2384 233.1 L2400 227.3 L2416 219.9 L2432 211.0 L2448 200.8 L2464 189.6 L2480 177.5 L2496 164.8 L2512 151.6 L2528 138.4 L2544 125.2 L2560 112.5 L2576 100.4 L2592 89.2 L2608 79.0 L2624 70.1 L2640 62.7 L2656 56.9 L2672 52.8 L2688 50.5 L2704 50.1 L2720 51.4 L2736 54.6 L2752 59.6 L2768 66.2 L2784 74.4 L2800 83.9 L2816 94.7 L2832 106.4 L2848 118.8 L2864 131.8 L2880 145.0;M0 145.0 L16 135.3 L32 125.7 L48 116.5 L64 107.9 L80 100.0 L96 93.0 L112 87.0 L128 82.1 L144 78.4 L160 76.1 L176 75.0 L192 75.4 L208 77.1 L224 80.1 L240 84.4 L256 89.8 L272 96.4 L288 103.9 L304 112.1 L320 121.1 L336 130.4 L352 140.1 L368 149.9 L384 159.6 L400 168.9 L416 177.9 L432 186.1 L448 193.6 L464 200.2 L480 205.6 L496 209.9 L512 212.9 L528 214.6 L544 215.0 L560 213.9 L576 211.6 L592 207.9 L608 203.0 L624 197.0 L640 190.0 L656 182.1 L672 173.5 L688 164.3 L704 154.7 L720 145.0 L736 135.3 L752 125.7 L768 116.5 L784 107.9 L800 100.0 L816 93.0 L832 87.0 L848 82.1 L864 78.4 L880 76.1 L896 75.0 L912 75.4 L928 77.1 L944 80.1 L960 84.4 L976 89.8 L992 96.4 L1008 103.9 L1024 112.1 L1040 121.1 L1056 130.4 L1072 140.1 L1088 149.9 L1104 159.6 L1120 168.9 L1136 177.9 L1152 186.1 L1168 193.6 L1184 200.2 L1200 205.6 L1216 209.9 L1232 212.9 L1248 214.6 L1264 215.0 L1280 213.9 L1296 211.6 L1312 207.9 L1328 203.0 L1344 197.0 L1360 190.0 L1376 182.1 L1392 173.5 L1408 164.3 L1424 154.7 L1440 145.0 L1456 135.3 L1472 125.7 L1488 116.5 L1504 107.9 L1520 100.0 L1536 93.0 L1552 87.0 L1568 82.1 L1584 78.4 L1600 76.1 L1616 75.0 L1632 75.4 L1648 77.1 L1664 80.1 L1680 84.4 L1696 89.8 L1712 96.4 L1728 103.9 L1744 112.1 L1760 121.1 L1776 130.4 L1792 140.1 L1808 149.9 L1824 159.6 L1840 168.9 L1856 177.9 L1872 186.1 L1888 193.6 L1904 200.2 L1920 205.6 L1936 209.9 L1952 212.9 L1968 214.6 L1984 215.0 L2000 213.9 L2016 211.6 L2032 207.9 L2048 203.0 L2064 197.0 L2080 190.0 L2096 182.1 L2112 173.5 L2128 164.3 L2144 154.7 L2160 145.0 L2176 135.3 L2192 125.7 L2208 116.5 L2224 107.9 L2240 100.0 L2256 93.0 L2272 87.0 L2288 82.1 L2304 78.4 L2320 76.1 L2336 75.0 L2352 75.4 L2368 77.1 L2384 80.1 L2400 84.4 L2416 89.8 L2432 96.4 L2448 103.9 L2464 112.1 L2480 121.1 L2496 130.4 L2512 140.1 L2528 149.9 L2544 159.6 L2560 168.9 L2576 177.9 L2592 186.1 L2608 193.6 L2624 200.2 L2640 205.6 L2656 209.9 L2672 212.9 L2688 214.6 L2704 215.0 L2720 213.9 L2736 211.6 L2752 207.9 L2768 203.0 L2784 197.0 L2800 190.0 L2816 182.1 L2832 173.5 L2848 164.3 L2864 154.7 L2880 145.0;M0 145.0 L16 151.7 L32 158.2 L48 164.5 L64 170.4 L80 175.9 L96 180.7 L112 184.8 L128 188.1 L144 190.7 L160 192.3 L176 193.0 L192 192.7 L208 191.6 L224 189.5 L240 186.6 L256 182.8 L272 178.3 L288 173.2 L304 167.5 L320 161.4 L336 155.0 L352 148.3 L368 141.7 L384 135.0 L400 128.6 L416 122.5 L432 116.8 L448 111.7 L464 107.2 L480 103.4 L496 100.5 L512 98.4 L528 97.3 L544 97.0 L560 97.7 L576 99.3 L592 101.9 L608 105.2 L624 109.3 L640 114.1 L656 119.6 L672 125.5 L688 131.8 L704 138.3 L720 145.0 L736 151.7 L752 158.2 L768 164.5 L784 170.4 L800 175.9 L816 180.7 L832 184.8 L848 188.1 L864 190.7 L880 192.3 L896 193.0 L912 192.7 L928 191.6 L944 189.5 L960 186.6 L976 182.8 L992 178.3 L1008 173.2 L1024 167.5 L1040 161.4 L1056 155.0 L1072 148.3 L1088 141.7 L1104 135.0 L1120 128.6 L1136 122.5 L1152 116.8 L1168 111.7 L1184 107.2 L1200 103.4 L1216 100.5 L1232 98.4 L1248 97.3 L1264 97.0 L1280 97.7 L1296 99.3 L1312 101.9 L1328 105.2 L1344 109.3 L1360 114.1 L1376 119.6 L1392 125.5 L1408 131.8 L1424 138.3 L1440 145.0 L1456 151.7 L1472 158.2 L1488 164.5 L1504 170.4 L1520 175.9 L1536 180.7 L1552 184.8 L1568 188.1 L1584 190.7 L1600 192.3 L1616 193.0 L1632 192.7 L1648 191.6 L1664 189.5 L1680 186.6 L1696 182.8 L1712 178.3 L1728 173.2 L1744 167.5 L1760 161.4 L1776 155.0 L1792 148.3 L1808 141.7 L1824 135.0 L1840 128.6 L1856 122.5 L1872 116.8 L1888 111.7 L1904 107.2 L1920 103.4 L1936 100.5 L1952 98.4 L1968 97.3 L1984 97.0 L2000 97.7 L2016 99.3 L2032 101.9 L2048 105.2 L2064 109.3 L2080 114.1 L2096 119.6 L2112 125.5 L2128 131.8 L2144 138.3 L2160 145.0 L2176 151.7 L2192 158.2 L2208 164.5 L2224 170.4 L2240 175.9 L2256 180.7 L2272 184.8 L2288 188.1 L2304 190.7 L2320 192.3 L2336 193.0 L2352 192.7 L2368 191.6 L2384 189.5 L2400 186.6 L2416 182.8 L2432 178.3 L2448 173.2 L2464 167.5 L2480 161.4 L2496 155.0 L2512 148.3 L2528 141.7 L2544 135.0 L2560 128.6 L2576 122.5 L2592 116.8 L2608 111.7 L2624 107.2 L2640 103.4 L2656 100.5 L2672 98.4 L2688 97.3 L2704 97.0 L2720 97.7 L2736 99.3 L2752 101.9 L2768 105.2 L2784 109.3 L2800 114.1 L2816 119.6 L2832 125.5 L2848 131.8 L2864 138.3 L2880 145.0;M0 145.0 L16 140.8 L32 136.7 L48 132.8 L64 129.1 L80 125.7 L96 122.7 L112 120.1 L128 118.0 L144 116.5 L160 115.5 L176 115.0 L192 115.2 L208 115.9 L224 117.2 L240 119.0 L256 121.4 L272 124.2 L288 127.4 L304 130.9 L320 134.7 L336 138.8 L352 142.9 L368 147.1 L384 151.2 L400 155.3 L416 159.1 L432 162.6 L448 165.8 L464 168.6 L480 171.0 L496 172.8 L512 174.1 L528 174.8 L544 175.0 L560 174.5 L576 173.5 L592 172.0 L608 169.9 L624 167.3 L640 164.3 L656 160.9 L672 157.2 L688 153.3 L704 149.2 L720 145.0 L736 140.8 L752 136.7 L768 132.8 L784 129.1 L800 125.7 L816 122.7 L832 120.1 L848 118.0 L864 116.5 L880 115.5 L896 115.0 L912 115.2 L928 115.9 L944 117.2 L960 119.0 L976 121.4 L992 124.2 L1008 127.4 L1024 130.9 L1040 134.7 L1056 138.8 L1072 142.9 L1088 147.1 L1104 151.2 L1120 155.3 L1136 159.1 L1152 162.6 L1168 165.8 L1184 168.6 L1200 171.0 L1216 172.8 L1232 174.1 L1248 174.8 L1264 175.0 L1280 174.5 L1296 173.5 L1312 172.0 L1328 169.9 L1344 167.3 L1360 164.3 L1376 160.9 L1392 157.2 L1408 153.3 L1424 149.2 L1440 145.0 L1456 140.8 L1472 136.7 L1488 132.8 L1504 129.1 L1520 125.7 L1536 122.7 L1552 120.1 L1568 118.0 L1584 116.5 L1600 115.5 L1616 115.0 L1632 115.2 L1648 115.9 L1664 117.2 L1680 119.0 L1696 121.4 L1712 124.2 L1728 127.4 L1744 130.9 L1760 134.7 L1776 138.8 L1792 142.9 L1808 147.1 L1824 151.2 L1840 155.3 L1856 159.1 L1872 162.6 L1888 165.8 L1904 168.6 L1920 171.0 L1936 172.8 L1952 174.1 L1968 174.8 L1984 175.0 L2000 174.5 L2016 173.5 L2032 172.0 L2048 169.9 L2064 167.3 L2080 164.3 L2096 160.9 L2112 157.2 L2128 153.3 L2144 149.2 L2160 145.0 L2176 140.8 L2192 136.7 L2208 132.8 L2224 129.1 L2240 125.7 L2256 122.7 L2272 120.1 L2288 118.0 L2304 116.5 L2320 115.5 L2336 115.0 L2352 115.2 L2368 115.9 L2384 117.2 L2400 119.0 L2416 121.4 L2432 124.2 L2448 127.4 L2464 130.9 L2480 134.7 L2496 138.8 L2512 142.9 L2528 147.1 L2544 151.2 L2560 155.3 L2576 159.1 L2592 162.6 L2608 165.8 L2624 168.6 L2640 171.0 L2656 172.8 L2672 174.1 L2688 174.8 L2704 175.0 L2720 174.5 L2736 173.5 L2752 172.0 L2768 169.9 L2784 167.3 L2800 164.3 L2816 160.9 L2832 157.2 L2848 153.3 L2864 149.2 L2880 145.0;M0 145.0 L16 147.4 L32 149.7 L48 151.9 L64 154.0 L80 155.9 L96 157.6 L112 159.1 L128 160.3 L144 161.2 L160 161.7 L176 162.0 L192 161.9 L208 161.5 L224 160.8 L240 159.7 L256 158.4 L272 156.8 L288 155.0 L304 153.0 L320 150.8 L336 148.5 L352 146.2 L368 143.8 L384 141.5 L400 139.2 L416 137.0 L432 135.0 L448 133.2 L464 131.6 L480 130.3 L496 129.2 L512 128.5 L528 128.1 L544 128.0 L560 128.3 L576 128.8 L592 129.7 L608 130.9 L624 132.4 L640 134.1 L656 136.0 L672 138.1 L688 140.3 L704 142.6 L720 145.0 L736 147.4 L752 149.7 L768 151.9 L784 154.0 L800 155.9 L816 157.6 L832 159.1 L848 160.3 L864 161.2 L880 161.7 L896 162.0 L912 161.9 L928 161.5 L944 160.8 L960 159.7 L976 158.4 L992 156.8 L1008 155.0 L1024 153.0 L1040 150.8 L1056 148.5 L1072 146.2 L1088 143.8 L1104 141.5 L1120 139.2 L1136 137.0 L1152 135.0 L1168 133.2 L1184 131.6 L1200 130.3 L1216 129.2 L1232 128.5 L1248 128.1 L1264 128.0 L1280 128.3 L1296 128.8 L1312 129.7 L1328 130.9 L1344 132.4 L1360 134.1 L1376 136.0 L1392 138.1 L1408 140.3 L1424 142.6 L1440 145.0 L1456 147.4 L1472 149.7 L1488 151.9 L1504 154.0 L1520 155.9 L1536 157.6 L1552 159.1 L1568 160.3 L1584 161.2 L1600 161.7 L1616 162.0 L1632 161.9 L1648 161.5 L1664 160.8 L1680 159.7 L1696 158.4 L1712 156.8 L1728 155.0 L1744 153.0 L1760 150.8 L1776 148.5 L1792 146.2 L1808 143.8 L1824 141.5 L1840 139.2 L1856 137.0 L1872 135.0 L1888 133.2 L1904 131.6 L1920 130.3 L1936 129.2 L1952 128.5 L1968 128.1 L1984 128.0 L2000 128.3 L2016 128.8 L2032 129.7 L2048 130.9 L2064 132.4 L2080 134.1 L2096 136.0 L2112 138.1 L2128 140.3 L2144 142.6 L2160 145.0 L2176 147.4 L2192 149.7 L2208 151.9 L2224 154.0 L2240 155.9 L2256 157.6 L2272 159.1 L2288 160.3 L2304 161.2 L2320 161.7 L2336 162.0 L2352 161.9 L2368 161.5 L2384 160.8 L2400 159.7 L2416 158.4 L2432 156.8 L2448 155.0 L2464 153.0 L2480 150.8 L2496 148.5 L2512 146.2 L2528 143.8 L2544 141.5 L2560 139.2 L2576 137.0 L2592 135.0 L2608 133.2 L2624 131.6 L2640 130.3 L2656 129.2 L2672 128.5 L2688 128.1 L2704 128.0 L2720 128.3 L2736 128.8 L2752 129.7 L2768 130.9 L2784 132.4 L2800 134.1 L2816 136.0 L2832 138.1 L2848 140.3 L2864 142.6 L2880 145.0;M0 145.0 L16 143.9 L32 142.8 L48 141.7 L64 140.8 L80 139.9 L96 139.1 L112 138.4 L128 137.8 L144 137.4 L160 137.1 L176 137.0 L192 137.0 L208 137.2 L224 137.6 L240 138.1 L256 138.7 L272 139.4 L288 140.3 L304 141.2 L320 142.3 L336 143.3 L352 144.4 L368 145.6 L384 146.7 L400 147.7 L416 148.8 L432 149.7 L448 150.6 L464 151.3 L480 151.9 L496 152.4 L512 152.8 L528 153.0 L544 153.0 L560 152.9 L576 152.6 L592 152.2 L608 151.6 L624 150.9 L640 150.1 L656 149.2 L672 148.3 L688 147.2 L704 146.1 L720 145.0 L736 143.9 L752 142.8 L768 141.7 L784 140.8 L800 139.9 L816 139.1 L832 138.4 L848 137.8 L864 137.4 L880 137.1 L896 137.0 L912 137.0 L928 137.2 L944 137.6 L960 138.1 L976 138.7 L992 139.4 L1008 140.3 L1024 141.2 L1040 142.3 L1056 143.3 L1072 144.4 L1088 145.6 L1104 146.7 L1120 147.7 L1136 148.8 L1152 149.7 L1168 150.6 L1184 151.3 L1200 151.9 L1216 152.4 L1232 152.8 L1248 153.0 L1264 153.0 L1280 152.9 L1296 152.6 L1312 152.2 L1328 151.6 L1344 150.9 L1360 150.1 L1376 149.2 L1392 148.3 L1408 147.2 L1424 146.1 L1440 145.0 L1456 143.9 L1472 142.8 L1488 141.7 L1504 140.8 L1520 139.9 L1536 139.1 L1552 138.4 L1568 137.8 L1584 137.4 L1600 137.1 L1616 137.0 L1632 137.0 L1648 137.2 L1664 137.6 L1680 138.1 L1696 138.7 L1712 139.4 L1728 140.3 L1744 141.2 L1760 142.3 L1776 143.3 L1792 144.4 L1808 145.6 L1824 146.7 L1840 147.7 L1856 148.8 L1872 149.7 L1888 150.6 L1904 151.3 L1920 151.9 L1936 152.4 L1952 152.8 L1968 153.0 L1984 153.0 L2000 152.9 L2016 152.6 L2032 152.2 L2048 151.6 L2064 150.9 L2080 150.1 L2096 149.2 L2112 148.3 L2128 147.2 L2144 146.1 L2160 145.0 L2176 143.9 L2192 142.8 L2208 141.7 L2224 140.8 L2240 139.9 L2256 139.1 L2272 138.4 L2288 137.8 L2304 137.4 L2320 137.1 L2336 137.0 L2352 137.0 L2368 137.2 L2384 137.6 L2400 138.1 L2416 138.7 L2432 139.4 L2448 140.3 L2464 141.2 L2480 142.3 L2496 143.3 L2512 144.4 L2528 145.6 L2544 146.7 L2560 147.7 L2576 148.8 L2592 149.7 L2608 150.6 L2624 151.3 L2640 151.9 L2656 152.4 L2672 152.8 L2688 153.0 L2704 153.0 L2720 152.9 L2736 152.6 L2752 152.2 L2768 151.6 L2784 150.9 L2800 150.1 L2816 149.2 L2832 148.3 L2848 147.2 L2864 146.1 L2880 145.0;M0 145.0 L16 145.4 L32 145.8 L48 146.2 L64 146.6 L80 146.9 L96 147.2 L112 147.5 L128 147.7 L144 147.9 L160 148.0 L176 148.0 L192 148.0 L208 147.9 L224 147.8 L240 147.6 L256 147.4 L272 147.1 L288 146.8 L304 146.4 L320 146.0 L336 145.6 L352 145.2 L368 144.8 L384 144.4 L400 144.0 L416 143.6 L432 143.2 L448 142.9 L464 142.6 L480 142.4 L496 142.2 L512 142.1 L528 142.0 L544 142.0 L560 142.0 L576 142.1 L592 142.3 L608 142.5 L624 142.8 L640 143.1 L656 143.4 L672 143.8 L688 144.2 L704 144.6 L720 145.0 L736 145.4 L752 145.8 L768 146.2 L784 146.6 L800 146.9 L816 147.2 L832 147.5 L848 147.7 L864 147.9 L880 148.0 L896 148.0 L912 148.0 L928 147.9 L944 147.8 L960 147.6 L976 147.4 L992 147.1 L1008 146.8 L1024 146.4 L1040 146.0 L1056 145.6 L1072 145.2 L1088 144.8 L1104 144.4 L1120 144.0 L1136 143.6 L1152 143.2 L1168 142.9 L1184 142.6 L1200 142.4 L1216 142.2 L1232 142.1 L1248 142.0 L1264 142.0 L1280 142.0 L1296 142.1 L1312 142.3 L1328 142.5 L1344 142.8 L1360 143.1 L1376 143.4 L1392 143.8 L1408 144.2 L1424 144.6 L1440 145.0 L1456 145.4 L1472 145.8 L1488 146.2 L1504 146.6 L1520 146.9 L1536 147.2 L1552 147.5 L1568 147.7 L1584 147.9 L1600 148.0 L1616 148.0 L1632 148.0 L1648 147.9 L1664 147.8 L1680 147.6 L1696 147.4 L1712 147.1 L1728 146.8 L1744 146.4 L1760 146.0 L1776 145.6 L1792 145.2 L1808 144.8 L1824 144.4 L1840 144.0 L1856 143.6 L1872 143.2 L1888 142.9 L1904 142.6 L1920 142.4 L1936 142.2 L1952 142.1 L1968 142.0 L1984 142.0 L2000 142.0 L2016 142.1 L2032 142.3 L2048 142.5 L2064 142.8 L2080 143.1 L2096 143.4 L2112 143.8 L2128 144.2 L2144 144.6 L2160 145.0 L2176 145.4 L2192 145.8 L2208 146.2 L2224 146.6 L2240 146.9 L2256 147.2 L2272 147.5 L2288 147.7 L2304 147.9 L2320 148.0 L2336 148.0 L2352 148.0 L2368 147.9 L2384 147.8 L2400 147.6 L2416 147.4 L2432 147.1 L2448 146.8 L2464 146.4 L2480 146.0 L2496 145.6 L2512 145.2 L2528 144.8 L2544 144.4 L2560 144.0 L2576 143.6 L2592 143.2 L2608 142.9 L2624 142.6 L2640 142.4 L2656 142.2 L2672 142.1 L2688 142.0 L2704 142.0 L2720 142.0 L2736 142.1 L2752 142.3 L2768 142.5 L2784 142.8 L2800 143.1 L2816 143.4 L2832 143.8 L2848 144.2 L2864 144.6 L2880 145.0;M0 145.0 L16 145.0 L32 145.0 L48 145.0 L64 145.0 L80 145.0 L96 145.0 L112 145.0 L128 145.0 L144 145.0 L160 145.0 L176 145.0 L192 145.0 L208 145.0 L224 145.0 L240 145.0 L256 145.0 L272 145.0 L288 145.0 L304 145.0 L320 145.0 L336 145.0 L352 145.0 L368 145.0 L384 145.0 L400 145.0 L416 145.0 L432 145.0 L448 145.0 L464 145.0 L480 145.0 L496 145.0 L512 145.0 L528 145.0 L544 145.0 L560 145.0 L576 145.0 L592 145.0 L608 145.0 L624 145.0 L640 145.0 L656 145.0 L672 145.0 L688 145.0 L704 145.0 L720 145.0 L736 145.0 L752 145.0 L768 145.0 L784 145.0 L800 145.0 L816 145.0 L832 145.0 L848 145.0 L864 145.0 L880 145.0 L896 145.0 L912 145.0 L928 145.0 L944 145.0 L960 145.0 L976 145.0 L992 145.0 L1008 145.0 L1024 145.0 L1040 145.0 L1056 145.0 L1072 145.0 L1088 145.0 L1104 145.0 L1120 145.0 L1136 145.0 L1152 145.0 L1168 145.0 L1184 145.0 L1200 145.0 L1216 145.0 L1232 145.0 L1248 145.0 L1264 145.0 L1280 145.0 L1296 145.0 L1312 145.0 L1328 145.0 L1344 145.0 L1360 145.0 L1376 145.0 L1392 145.0 L1408 145.0 L1424 145.0 L1440 145.0 L1456 145.0 L1472 145.0 L1488 145.0 L1504 145.0 L1520 145.0 L1536 145.0 L1552 145.0 L1568 145.0 L1584 145.0 L1600 145.0 L1616 145.0 L1632 145.0 L1648 145.0 L1664 145.0 L1680 145.0 L1696 145.0 L1712 145.0 L1728 145.0 L1744 145.0 L1760 145.0 L1776 145.0 L1792 145.0 L1808 145.0 L1824 145.0 L1840 145.0 L1856 145.0 L1872 145.0 L1888 145.0 L1904 145.0 L1920 145.0 L1936 145.0 L1952 145.0 L1968 145.0 L1984 145.0 L2000 145.0 L2016 145.0 L2032 145.0 L2048 145.0 L2064 145.0 L2080 145.0 L2096 145.0 L2112 145.0 L2128 145.0 L2144 145.0 L2160 145.0 L2176 145.0 L2192 145.0 L2208 145.0 L2224 145.0 L2240 145.0 L2256 145.0 L2272 145.0 L2288 145.0 L2304 145.0 L2320 145.0 L2336 145.0 L2352 145.0 L2368 145.0 L2384 145.0 L2400 145.0 L2416 145.0 L2432 145.0 L2448 145.0 L2464 145.0 L2480 145.0 L2496 145.0 L2512 145.0 L2528 145.0 L2544 145.0 L2560 145.0 L2576 145.0 L2592 145.0 L2608 145.0 L2624 145.0 L2640 145.0 L2656 145.0 L2672 145.0 L2688 145.0 L2704 145.0 L2720 145.0 L2736 145.0 L2752 145.0 L2768 145.0 L2784 145.0 L2800 145.0 L2816 145.0 L2832 145.0 L2848 145.0 L2864 145.0 L2880 145.0"></animate></path>
+<mask id="bandMask" maskUnits="userSpaceOnUse" x="0" y="0" width="2880" height="290"><use href="#wavePath" fill="none" stroke="#FFFFFF" stroke-width="86" stroke-linecap="butt" stroke-linejoin="round"></use></mask>
+</defs>
+<use href="#wavePath" fill="none" stroke="url(#bandGrad)" stroke-opacity="0.9" stroke-width="86" stroke-linejoin="round"></use>
+<g mask="url(#bandMask)">
+<text class="wsw" style="animation-delay: 0.00s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="0.000%">Strength ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.00s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="50.000%">Strength ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.07s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="5.636%">Yoga ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.07s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="55.636%">Yoga ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.14s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="9.917%">Pilates ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.14s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="59.917%">Pilates ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.21s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="14.813%">Ride ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.21s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="64.813%">Ride ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.28s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="18.914%">Recovery ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.28s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="68.914%">Recovery ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.35s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="25.000%">Strength ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.35s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="75.000%">Strength ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.42s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="30.636%">Yoga ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.42s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="80.636%">Yoga ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.49s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="34.917%">Pilates ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.49s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="84.917%">Pilates ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.56s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="39.813%">Ride ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.56s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="89.813%">Ride ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.63s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="43.914%">Recovery ·</textPath></text>
+<text class="wsw" style="animation-delay: 0.63s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="93.914%">Recovery ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.00s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="0.000%">5 studios ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.00s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="50.000%">5 studios ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.07s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="7.017%">Downtown Boston ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.07s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="57.017%">Downtown Boston ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.14s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="18.068%">East Boston ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.14s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="68.068%">East Boston ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.21s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="26.336%">South Boston ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.21s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="76.336%">South Boston ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.28s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="35.229%">Wellesley ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.28s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="85.229%">Wellesley ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.35s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="42.587%">Cape Cod ·</textPath></text>
+<text class="wsw" style="animation-delay: 4.35s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="92.587%">Cape Cod ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.00s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="0.000%">Come as you are ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.00s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="50.000%">Come as you are ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.07s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="8.874%">leave stronger ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.07s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="58.874%">leave stronger ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.14s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="16.667%">Come as you are ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.14s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="66.667%">Come as you are ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.21s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="25.540%">leave stronger ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.21s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="75.540%">leave stronger ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.28s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="33.333%">Come as you are ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.28s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="83.333%">Come as you are ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.35s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="42.207%">leave stronger ·</textPath></text>
+<text class="wsw" style="animation-delay: 8.35s" font-family="Inter, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF" fill-opacity="1" dominant-baseline="central"><textPath href="#wavePath" startOffset="92.207%">leave stronger ·</textPath></text>
+</g>
+</svg>
+</div>
+</div>
+</div>
+
+<sc-if value="{{showOffer}}" hint-placeholder-val="{{true}}">
+<aside id="intro" class="offer" aria-label="Intro offer" style="position: fixed; left: 50%; bottom: 28px; z-index: 30; transform: translateX(-50%); width: max-content; max-width: calc(100% - 32px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 28px; padding: 12px 12px 12px 30px; border-radius: 999px; background-color: rgba(18,18,18,0.62); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(18px); box-shadow: 0 18px 50px rgba(0,0,0,0.45)">
+<span aria-hidden="true" class="glow" style="width: 14px; height: 14px; border-radius: 999px; background: #FF4848; box-shadow: 0 0 14px #FF4848; flex: none"></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; color: #FF9999">Intro offer</span><span style="font-family: Figtree, sans-serif; font-size: clamp(20px, 2vw, 26px); line-height: 1.15; font-weight: 300; letter-spacing: -0.015em">New clients: get 5 classes <span style="color: #A3A3A3">for $50</span></span></span>
+<a href="#" class="btn" style="padding: 18px 32px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 17px; font-weight: 600">Start now</a>
+<button type="button" aria-label="Close intro offer" onClick="{{dismiss}}" class="glass" style="width: 52px; height: 52px; border-radius: 999px; border: 0; background-color: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; cursor: pointer; flex: none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</aside>
+</sc-if>
+
+<section data-bg="#000000" style="max-width: 1360px; margin: 0 auto; padding: 104px 40px 96px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; color: #A3A3A3">(01) <span style="color: #FF7070">Our programs</span></p>
+<h2 style="margin: 0; font-size: clamp(44px, 5.2vw, 76px); line-height: 1; font-weight: 300; letter-spacing: -0.035em; max-width: 760px" class="wv"><span><span class="wvi" style="transition-delay: 0.00s;">Five</span></span> <span><span class="wvi" style="transition-delay: 0.07s;">ways</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.14s;">to</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.21s;">get</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.28s;">stronger</span></span></h2>
+</div>
+<a href="#" class="btn glass rv" style="padding: 14px 24px; border-radius: 999px; background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); font-size: 15px; font-weight: 600">Explore all programs</a>
+</div>
+<div class="m-pin" ref="{{setProgEl}}" style="position: relative; height: 2400px">
+<div class="m-sticky" style="position: sticky; top: 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 72px; padding: 24px 0">
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; border-bottom: 1px solid rgba(255,255,255,0.14)">
+<sc-for list="{{programs}}" as="p" hint-placeholder-count="5">
+<a href="#" class="rv {{p.rowCls}}" onMouseEnter="{{p.pick}}" onFocus="{{p.pick}}" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: 8px 28px; padding: 28px 8px; border-top: 1px solid rgba(255,255,255,0.14); color: #FFFFFF">
+<span style="font-size: 13px; color: {{p.numColor}}; transition: color .4s">{{p.n}}</span>
+<span class="roll" aria-label="{{p.name}}" style="text-transform: uppercase; font-family: Anton, 'Inter Tight', sans-serif; font-size: clamp(40px, 4.4vw, 64px); line-height: 1.1; letter-spacing: 0.005em; color: {{p.nameColor}}; transition: color .45s; display: inline-flex; overflow: hidden; height: 1.1em"><sc-for list="{{p.chars}}" as="ch" hint-placeholder-count="7"><span class="ch" aria-hidden="true" style="display: inline-flex; flex-direction: column; white-space: pre; {{ch.d}}"><span style="height: 1.1em">{{ch.c}}</span><span class="chg" style="height: 1.1em; {{ch.g}}">{{ch.c}}</span></span></sc-for></span>
+<span class="parrow" aria-hidden="true" style="display: flex; align-items: center; color: {{p.arrowColor}}; transition: color .4s"><svg width="46" height="36" viewBox="0 0 46 36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M1 18 H43"></path><path d="M27 2 C 28 11, 34 17, 43 18 C 34 19, 28 25, 27 34"></path></svg></span>
+<sc-if value="{{p.active}}" hint-placeholder-val="{{false}}"><span class="fu" style="grid-column: 2 / 4; font-size: 15px; line-height: 1.55; color: #A3A3A3; max-width: 480px; padding-bottom: 4px">{{p.text}}</span></sc-if>
+</a>
+</sc-for>
+</div>
+<div class="rv" style="flex: 1 1 380px; min-width: 0; position: relative; aspect-ratio: 4 / 5; max-height: 600px; border-radius: 24px; overflow: hidden; background: #111111">
+<sc-for list="{{programs}}" as="p" hint-placeholder-count="5">
+<img src="{{p.img}}" alt="{{p.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{p.imgOpacity}}; transform: scale({{p.imgScale}}); transition: opacity .7s ease, transform 1.2s cubic-bezier(.2,.8,.2,1)">
+<sc-if value="{{p.hasVid}}" hint-placeholder-val="{{false}}"><video src="{{p.vid}}" poster="{{p.img}}" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="auto" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{p.imgOpacity}}; transform: scale({{p.imgScale}}); transition: opacity .7s ease, transform 1.2s cubic-bezier(.2,.8,.2,1)"></video></sc-if>
+</sc-for>
+<span aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.75) 100%)"></span>
+<span style="position: absolute; left: 24px; bottom: 22px; right: 24px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font-family: Figtree, sans-serif; font-size: 28px; font-weight: 300; letter-spacing: -0.02em">{{progActive}}</span>
+<a href="#" class="btn" style="padding: 12px 22px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 14px; font-weight: 600">Learn more</a>
+</span>
+</div>
+</div>
+</div>
+</section>
+
+<section data-bg="#2A0808" style="position: relative;">
+<div class="glow" aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(50% 40% at 100% 0%, rgba(184,30,30,0.45) 0%, rgba(0,0,0,0) 70%)"></div>
+<div style="position: relative; max-width: 1360px; margin: 0 auto; padding: 120px 40px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px">
+<div style="flex: 1 1 400px; min-width: 0; align-self: stretch">
+<div class="m-sticky" style="position: sticky; top: 120px; display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px">
+<p class="io" style="margin: 0; font-size: 13px; color: #A3A3A3">(02) <span style="color: #FF7070">The B/SPOKE difference</span></p>
+<h2 class="wv" style="margin: 0; font-size: clamp(34px, 3.6vw, 56px); line-height: 1.08; font-weight: 300; letter-spacing: -0.03em"><span><span class="wvi" style="transition-delay: 0.00s;">Everyone</span></span> <span><span class="wvi" style="transition-delay: 0.07s;">deserves</span></span> <span><span class="wvi" style="transition-delay: 0.14s;">a</span></span> <span class="pill" aria-hidden="true" style="position: relative; display: inline-block; width: 1.9em; height: 0.82em; border-radius: 999px; overflow: hidden; vertical-align: -0.06em; background: #1A1A1A"><sc-for list="{{pillImgs}}" as="pi" hint-placeholder-count="4"><img class="swap" src="{{pi.src}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; {{pi.delay}}"></sc-for></span> <span><span class="wvi" style="transition-delay: 0.21s;">welcoming,</span></span> <span><span class="wvi" style="transition-delay: 0.28s;">safe</span></span> <span><span class="wvi" style="transition-delay: 0.35s;">and</span></span> <span><span class="wvi" style="transition-delay: 0.42s;">fun</span></span> <span><span class="wvi" style="transition-delay: 0.49s;">place</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.56s;">to</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.63s;">move.</span></span></h2>
+<p class="io" style="margin: 8px 0 0; font-size: 16px; line-height: 1.55; color: #A3A3A3; max-width: 440px; transition-delay: .5s">Accessible, approachable classes designed by people who can't wait to see you become your best self.</p>
+<p class="io" aria-hidden="true" style="margin: 16px 0 0; display: flex; gap: 8px; align-items: center; font-size: 13px; color: #737373; transition-delay: .65s"><span style="width: 40px; height: 1px; background: #FF4848"></span>4 reasons</p>
+</div>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<sc-for list="{{difference}}" as="d" hint-placeholder-count="4">
+<article ref="{{d.setRef}}" class="card rv m-card" style="position: sticky; {{d.top}} filter: blur({{d.blur}}px) brightness({{d.bright}}); scale: {{d.sc}}; transform-origin: 50% 0; transition: filter .15s linear, scale .15s linear; height: 500px; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #111111; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 -20px 50px rgba(0,0,0,0.55)">
+<div style="height: 250px; flex: none; overflow: hidden; position: relative"><img class="zo" src="{{d.img}}" alt="{{d.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="flex: 1 1 auto; padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 10px; background: #111111">
+<h3 style="margin: 0; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.05; font-weight: 300; letter-spacing: -0.025em">{{d.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #A3A3A3">{{d.text}}</p>
+<a href="#" class="arrow" style="margin-top: 6px; font-size: 15px; font-weight: 600; color: #FFFFFF; display: flex; align-items: center; gap: 8px">{{d.cta}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-bg="#000000" aria-labelledby="app-title" style="max-width: 1360px; margin: 0 auto; padding: 120px 40px; box-sizing: border-box">
+<div class="grow" style="position: relative; border-radius: 28px; overflow: hidden; background: #0A0A0A; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-wrap: wrap; align-items: center; gap: 40px; padding: 56px 56px 0; box-sizing: border-box; min-height: 520px">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<div class="glow" style="position: absolute; right: -8%; top: 50%; width: 760px; height: 560px; transform: translateY(-50%); background: radial-gradient(50% 50% at 50% 50%, rgba(255,72,72,0.6) 0%, rgba(224,28,28,0.25) 40%, rgba(0,0,0,0) 70%); filter: blur(40px)"></div>
+<sc-for list="{{beams}}" as="bm" hint-placeholder-count="10">
+<span class="beam" style="position: absolute; top: 0; width: 2px; height: 78%; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.85) 100%); box-shadow: 0 0 10px rgba(255,255,255,0.35); {{bm.pos}}"></span>
+<span aria-hidden="true" style="position: absolute; top: 76%; width: 110px; height: 60px; margin-left: -54px; background: radial-gradient(50% 50% at 50% 30%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 70%); filter: blur(5px); {{bm.pos}}"></span>
+</sc-for>
+<span style="position: absolute; left: 0; top: 0; bottom: 0; width: min(560px, 60%); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); background: linear-gradient(90deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0) 100%); -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 65%, transparent 100%); mask-image: linear-gradient(90deg, #000 0%, #000 65%, transparent 100%)"></span>
+</div>
+<div style="position: relative; flex: 1 1 320px; max-width: 420px; display: flex; flex-direction: column; gap: 16px">
+<p class="rv" style="margin: 0; font-size: 13px; color: #A3A3A3">(03) <span style="color: #FF7070">Download the app</span></p>
+<h2 id="app-title" style="margin: 0; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; font-weight: 300; letter-spacing: -0.03em" class="wv"><span><span class="wvi" style="transition-delay: 0.00s;">Book</span></span> <span><span class="wvi" style="transition-delay: 0.07s;">your</span></span> <span><span class="wvi" style="transition-delay: 0.14s;">next</span></span> <span><span class="wvi" style="transition-delay: 0.21s;">class</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.28s;">from</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.35s;">your</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.42s;">phone</span></span></h2>
+<p class="rv" style="margin: 0; font-size: 16px; line-height: 1.55; color: #A3A3A3; animation-range: entry 30% cover 50%">B/SPOKE's mobile app for iPhone and Android.</p>
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; animation-range: entry 38% cover 56%">
+<a href="#" class="btn" style="padding: 14px 24px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 15px; font-weight: 600">App Store</a>
+<a href="#" class="btn glass" style="padding: 14px 24px; border-radius: 999px; background-color: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(12px); font-size: 15px; font-weight: 600">Google Play</a>
+</div>
+</div>
+<div class="m-phones" style="position: relative; flex: 2 1 520px; min-width: 0; display: flex; justify-content: center; align-items: flex-end; gap: clamp(28px, 4vw, 64px); perspective: 1400px; padding-bottom: 70px">
+<sc-for list="{{phones}}" as="ph" hint-placeholder-count="4">
+<div class="{{ph.cls}}" style="{{ph.wrap}}">
+<div style="position: relative; aspect-ratio: 9 / 19.5; padding: 5px; box-sizing: border-box; border-radius: 34px; background: linear-gradient(90deg, #1c1c1c 0%, #6a6a6a 6%, #2a2a2a 14%, #111111 50%, #2a2a2a 86%, #6a6a6a 94%, #1c1c1c 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 30px 60px rgba(0,0,0,0.7); -webkit-box-reflect: below 6px linear-gradient(transparent 70%, rgba(255,255,255,0.2)); {{ph.tilt}}">
+<div style="position: relative; width: 100%; height: 100%; border-radius: 29px; overflow: hidden; background: #000000">
+<img src="{{ph.src}}" alt="{{ph.alt}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ph.pos}}; display: block">
+<span aria-hidden="true" style="position: absolute; top: 6px; left: 50%; width: 34%; height: 16px; margin-left: -17%; border-radius: 999px; background: #000000"></span>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-bg="#120404" style="position: relative; overflow: hidden;">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<span class="accA" style="position: absolute; left: 52%; top: 50%; width: 60vmax; height: 60vmax; margin: -30vmax 0 0 -30vmax; border-radius: 50%; background: radial-gradient(circle, rgba(255,72,72,0.5) 0%, rgba(184,30,30,0.3) 35%, rgba(91,21,21,0) 68%); filter: blur(30px)"></span>
+<span class="accB" style="position: absolute; left: 20%; top: 70%; width: 40vmax; height: 40vmax; margin: -20vmax 0 0 -20vmax; border-radius: 50%; background: radial-gradient(circle, rgba(255,72,72,0.28) 0%, rgba(91,21,21,0) 65%); filter: blur(30px)"></span>
+</div>
+<div aria-hidden="true" class="marq" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); white-space: nowrap; font-family: Figtree, sans-serif; font-size: 240px; line-height: 1; font-weight: 300; letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.08); animation-duration: 60s">Retreats · Retreats · Retreats · Retreats · Retreats · Retreats · </div>
+<div style="position: relative; max-width: 1360px; margin: 0 auto; padding: 120px 40px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); align-items: center; gap: 56px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; max-width: 560px">
+<p style="margin: 0; font-size: 13px; color: #A3A3A3">(04) <span style="color: #FF7070">Wellness retreats</span></p>
+<h2 style="margin: 0; font-size: clamp(36px, 4.2vw, 60px); line-height: 1.02; font-weight: 300; letter-spacing: -0.035em"><span class="wvl" style="display: block; white-space: nowrap"><span><span class="wvi" style="transition-delay: 0.00s;">Out</span></span> <span><span class="wvi" style="transition-delay: 0.07s;">of</span></span> <span><span class="wvi" style="transition-delay: 0.14s;">studio,</span></span></span><span class="wvl" style="display: block; white-space: nowrap; color: #737373; font-style: italic"><span><span class="wvi" style="transition-delay: 0.21s;">into</span></span> <span><span class="wvi" style="transition-delay: 0.28s;">somewhere</span></span> <span><span class="wvi" style="transition-delay: 0.35s;">new</span></span></span></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #A3A3A3">Curated destinations, activities and experiences designed to create lasting memories and connections.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background-color: rgba(255,255,255,0.10); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12); font-size: 13px; color: #FFFFFF">Destinations</span>
+<span style="padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background-color: rgba(255,255,255,0.10); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12); font-size: 13px; color: #FFFFFF">Activities</span>
+<span style="padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background-color: rgba(255,255,255,0.10); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12); font-size: 13px; color: #FFFFFF">Experiences</span>
+</div>
+<a href="#" class="btn" style="align-self: flex-start; margin-top: 8px; padding: 16px 30px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 16px; font-weight: 600">Explore retreats</a>
+</div>
+<div style="position: relative; justify-self: center; width: min(100%, 460px)">
+<div class="cr" style="position: relative; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.5)">
+<img class="zo" src="/assets/img-7055.jpg" alt="A group on a boat during a B/SPOKE wellness retreat" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block">
+<svg aria-hidden="true" viewBox="0 0 460 575" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%"><path class="route" d="M40 520 C 120 470, 90 380, 170 350 S 300 330, 300 250 S 380 120, 420 70" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-dasharray="700" stroke-dashoffset="0"></path><circle cx="420" cy="70" r="7" fill="#FF4848"></circle><circle cx="40" cy="520" r="5" fill="#FFFFFF"></circle></svg>
+</div>
+<span class="fl m-tag" style="position: absolute; left: -28px; bottom: 48px; padding: 12px 16px; border-radius: 14px; background-color: rgba(18,18,18,0.6); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(16px); display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #FF9999">Out of studio</span><span style="font-size: 15px; font-weight: 300">Wellness retreats</span></span>
+</div>
+</div>
+</section>
+
+<section data-bg="#000000" style="max-width: 1360px; margin: 0 auto; padding: 120px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; color: #A3A3A3">(05) <span style="color: #FF7070">Our packages</span></p>
+<h2 style="margin: 0; font-size: clamp(40px, 5vw, 72px); line-height: 1; font-weight: 300; letter-spacing: -0.035em" class="wv"><span><span class="wvi" style="transition-delay: 0.00s;">Pick</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.07s;">your</span></span> <span><span class="wvi" style="color: #737373; transition-delay: 0.14s;">pace</span></span></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 440px)); justify-content: center; gap: 20px">
+<div class="fl" style="position: relative; border-radius: 20px; overflow: hidden; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; background: #310C0C">
+<div class="glow" aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(90% 80% at 85% 0%, #FF4848 0%, #B81E1E 30%, #5B1515 60%, #1A0606 100%)"></div>
+<div style="position: relative; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.25); font-size: 13px; font-weight: 300">50% off 1st month · HOLIDAY26</span>
+<h3 style="margin: 0; font-size: 40px; line-height: 1.05; font-weight: 300; letter-spacing: -0.025em">Monthly memberships</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #FFE0E0; max-width: 440px">Make B/SPOKE part of your weekly routine, at the best value.</p>
+<p style="margin: 6px 0 0; display: flex; align-items: baseline; gap: 8px"><span style="font-size: 14px; color: #FFC2C2">from</span><span style="font-family: Figtree, sans-serif; font-size: 56px; line-height: 1; font-weight: 300; letter-spacing: -0.03em">$10</span><span style="font-size: 14px; color: #FFC2C2">per class</span></p>
+<details class="more-d" style="margin-top: 4px; border-top: 1px solid rgba(255,255,255,0.16); padding-top: 12px">
+<summary style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600; padding: 4px 0">See what’s included<span class="chev" aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; transition: transform .35s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></summary>
+<ul style="margin: 10px 0 8px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<sc-for list="{{memberPoints}}" as="mp" hint-placeholder-count="4"><li style="display: flex; gap: 10px; align-items: flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg><span>{{mp}}</span></li></sc-for>
+</ul>
+<dl style="margin: 8px 0 0; display: flex; flex-direction: column">
+<sc-for list="{{compare}}" as="c" hint-placeholder-count="7"><div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1)"><dt style="font-size: 13px; color: #FFC2C2">{{c.k}}</dt><dd style="margin: 0; font-size: 14px; color: #FFFFFF; text-align: right; max-width: 62%">{{c.m}}</dd></div></sc-for>
+</dl>
+</details>
+<a href="#" class="btn" style="align-self: flex-start; margin-top: 8px; padding: 15px 28px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 15px; font-weight: 600">Browse memberships</a>
+</div>
+</div>
+<div class="fr card" style="position: relative; border-radius: 20px; overflow: hidden; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid rgba(255,255,255,0.14); background: #0D0D0D">
+<img src="/assets/lehman-03930-2.jpg" alt="A pilates class at B/SPOKE" style="position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 300px; object-fit: cover">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 302px; background: linear-gradient(180deg, rgba(13,13,13,0) 30%, rgba(13,13,13,0.85) 75%, #0D0D0D 100%)"></div>
+<div style="position: relative; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(10px); font-size: 13px; font-weight: 300">25% off credit packs</span>
+<h3 style="margin: 0; font-size: 40px; line-height: 1.05; font-weight: 300; letter-spacing: -0.025em">Credit packages</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #D3D3D3; max-width: 440px">Need something more flexible? Choose the pack that fits your schedule.</p>
+<p style="margin: 6px 0 0; display: flex; align-items: baseline; gap: 8px"><span style="font-size: 14px; color: #A3A3A3">from</span><span style="font-family: Figtree, sans-serif; font-size: 56px; line-height: 1; font-weight: 300; letter-spacing: -0.03em">$24</span><span style="font-size: 14px; color: #A3A3A3">per class</span></p>
+<details class="more-d" style="margin-top: 4px; border-top: 1px solid rgba(255,255,255,0.16); padding-top: 12px">
+<summary style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600; padding: 4px 0">See what’s included<span class="chev" aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; transition: transform .35s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></summary>
+<ul style="margin: 10px 0 8px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<sc-for list="{{packPoints}}" as="pp" hint-placeholder-count="4"><li style="display: flex; gap: 10px; align-items: flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7070" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg><span>{{pp}}</span></li></sc-for>
+</ul>
+<dl style="margin: 8px 0 0; display: flex; flex-direction: column">
+<sc-for list="{{compare}}" as="c" hint-placeholder-count="7"><div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1)"><dt style="font-size: 13px; color: #A3A3A3">{{c.k}}</dt><dd style="margin: 0; font-size: 14px; color: #FFFFFF; text-align: right; max-width: 62%">{{c.p}}</dd></div></sc-for>
+</dl>
+</details>
+<a href="#" class="btn glass" style="align-self: flex-start; margin-top: 8px; padding: 14px 26px; border-radius: 999px; background-color: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(12px); font-size: 15px; font-weight: 600">Browse credit packs</a>
+</div>
+</div>
+</div>
+<p class="rv" style="margin: -24px 0 0; font-size: 13px; color: #737373">Both valid at all 5 studios. New client? Start with 5 classes for $50. <a href="#" style="color: #FF9999">See full pricing</a></p>
+</section>
+
+<section data-bg="#2A0808" aria-labelledby="studios-title" >
+<div class="m-pin" ref="{{setStudEl}}" style="position: relative; height: 3200px">
+<div class="m-sticky" style="position: sticky; top: 76px; height: calc(100vh - 76px); min-height: 700px; max-width: 1360px; margin: 0 auto; padding: 28px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 24px">
+<div class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; color: #A3A3A3">(06) <span style="color: #FF7070">Studios</span></p>
+<h2 id="studios-title" style="margin: 0; font-size: clamp(44px, 5.2vw, 76px); line-height: 1; font-weight: 300; letter-spacing: -0.035em">Find your <span style="color: #737373">nearest studio</span></h2>
+</div>
+<p style="margin: 0; font-size: 15px; color: #A3A3A3; max-width: 360px">Memberships and class packs are valid at all 5 studios.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0">
+<div class="m-map" style="position: relative; flex: 0 0 auto; height: clamp(320px, calc(100vh - 400px), 580px); aspect-ratio: 640 / 560; max-width: 100%">
+<div style="position: absolute; left: 1.5625%; top: 1.786%; width: 84.375%; height: 96.43%; border-radius: 50%; overflow: hidden; background: #1B1B1D; isolation: isolate">
+<div style="position: absolute; width: 576%; height: 576%; left: calc(50% - {{mapX}}); top: calc(50% - {{mapY}}); transition: left 1.4s cubic-bezier(.7,0,.2,1), top 1.4s cubic-bezier(.7,0,.2,1)">
+<img src="/assets/studios-map.jpg" alt="" style="width: 100%; height: 100%; display: block">
+<sc-for list="{{studios}}" as="st" hint-placeholder-count="5">
+<button type="button" aria-label="{{st.name}}" onClick="{{st.pick}}" onMouseEnter="{{st.pick}}" style="position: absolute; {{st.pos}} width: {{st.size}}; height: {{st.size}}; transform: translate(-50%, -50%); border-radius: 999px; border: 1.5px solid {{st.ring}}; background-color: {{st.bg}}; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 0 0 6px {{st.halo}}; transition: width .4s, height .4s, background-color .3s, box-shadow .4s"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="opacity: {{st.iconOp}}"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></button>
+</sc-for>
+</div>
+<span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.65) 100%)"></span>
+</div>
+<svg aria-hidden="true" viewBox="0 0 640 560" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none">
+<circle cx="280" cy="280" r="270" fill="none" stroke="rgba(255,255,255,0.14)"></circle>
+<line x1="300" y1="280" x2="640" y2="280" stroke="#FF4848" stroke-width="1.5"></line>
+<circle cx="640" cy="280" r="4" fill="#FF4848"></circle>
+<text x="40" y="552" fill="rgba(255,255,255,0.4)" font-size="10" font-family="Inter Tight, sans-serif">Map: Esri, © OpenStreetMap contributors</text>
+</svg>
+</div>
+<div class="rv m-scard" style="position: relative; z-index: 1; flex: 1 1 360px; min-width: 0; max-width: 440px; margin-left: -72px; border-radius: 22px; overflow: hidden; padding: 10px; box-sizing: border-box; background-color: rgba(30,30,30,0.38); backdrop-filter: blur(22px) saturate(1.4); -webkit-backdrop-filter: blur(22px) saturate(1.4); border: 1px solid rgba(255,255,255,0.22); box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 30px 60px rgba(0,0,0,0.45)">
+<div style="aspect-ratio: 16 / 9; max-height: 34vh; overflow: hidden; border-radius: 14px"><img src="{{stA.img}}" alt="{{stA.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 12px; color: #FF7070">Studio {{stA.n}} of 5</p>
+<h3 style="margin: 0; font-family: Anton, 'Inter Tight', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 400; letter-spacing: 0.005em">{{stA.name}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #D3D3D3">{{stA.addr}}</p>
+<a href="#" style="font-size: 14px; color: #A3A3A3">{{stA.email}}</a>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px">
+<a href="#" class="btn" style="padding: 12px 22px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 14px; font-weight: 600">See schedule</a>
+<a href="#" class="btn glass" style="padding: 12px 22px; border-radius: 999px; background-color: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); font-size: 14px; font-weight: 600">Directions</a>
+</div>
+</div>
+</div>
+</div>
+<div role="group" aria-label="Studios" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{studios}}" as="st" hint-placeholder-count="5">
+<button type="button" onClick="{{st.pick}}" style="padding: 10px 18px; border-radius: 999px; border: 1px solid {{st.chipRing}}; background-color: {{st.chip}}; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 300; cursor: pointer">{{st.name}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section data-bg="#000000" aria-labelledby="community-title" >
+<div class="m-pin" ref="{{setDeckEl}}" style="position: relative; height: 2400px">
+<div class="m-sticky" style="position: sticky; top: 76px; height: 860px; max-height: calc(100vh - 76px); min-height: 640px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 52px; padding: 24px 40px; box-sizing: border-box; overflow: hidden; text-align: center">
+<p style="margin: 0; font-size: 13px; color: #A3A3A3">(07) <span style="color: #FF7070">Join the community</span></p>
+<h2 id="community-title" style="margin: 0; text-transform: uppercase; font-family: Anton, 'Inter Tight', sans-serif; font-size: clamp(56px, 8.5vw, 132px); line-height: 0.95; font-weight: 400; letter-spacing: 0.005em; position: relative; z-index: 0">Stronger, <span style="background-image: linear-gradient(100deg, #FF4848 0%, #FF8A5C 30%, #B81E1E 60%, #5B1515 100%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: rotGrad 7s ease-in-out infinite">every day</span></h2>
+<div style="position: relative; z-index: 1; margin-top: -24px; width: min(100%, 1080px); display: flex; justify-content: center; gap: clamp(24px, 3vw, 48px)">
+<sc-for list="{{deckCols}}" as="col" hint-placeholder-count="3">
+<div style="position: relative; flex: 1 1 0; min-width: 0; max-width: min(310px, 30vh); aspect-ratio: 1 / 1">
+<sc-for list="{{col.cards}}" as="dk" hint-placeholder-count="3">
+<a href="#" style="position: absolute; inset: 0; border-radius: 6px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.55); {{dk.style}}">
+<img src="{{dk.img}}" alt="{{dk.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; left: 12px; top: 12px; padding: 5px 11px; border-radius: 999px; background-color: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(10px); font-size: 11px; font-weight: 300">{{dk.tag}}</span>
+</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #A3A3A3; max-width: 460px">Inspiration for your fitness journey, curated by the B/SPOKE community.</p>
+<nav aria-label="Community channels" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+<a href="#" class="btn" style="padding: 11px 20px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 14px; font-weight: 600">Instagram</a>
+<a href="#" class="btn glass" style="padding: 11px 20px; border-radius: 999px; background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); font-size: 14px; font-weight: 600">TikTok</a>
+<a href="#" class="btn glass" style="padding: 11px 20px; border-radius: 999px; background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); font-size: 14px; font-weight: 600">Music</a>
+<a href="#" class="btn glass" style="padding: 11px 20px; border-radius: 999px; background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); font-size: 14px; font-weight: 600">Shop</a>
+</nav>
+</div>
+</div>
+</section>
+
+<section data-bg="#0D0D0D" >
+<div style="max-width: 1360px; margin: 0 auto; padding: 88px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+<div class="io" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 12px"><h2 style="margin: 0; font-size: clamp(40px, 4.6vw, 68px); line-height: 1; font-weight: 300; letter-spacing: -0.035em">The journal</h2><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #A3A3A3">Health, nutrition and community stories from B/SPOKE.</p></div>
+<a href="#" class="arrow" style="font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px">Read the journal<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div class="jwrap io" style="transition-delay: .2s; overflow: hidden; margin: -16px 0 0; padding-bottom: 96px; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%)">
+<div class="jtrack" style="display: flex; gap: 32px; width: max-content; padding: 8px 0">
+<sc-for list="{{jLoop}}" as="j" hint-placeholder-count="6">
+<a href="#" class="card arrow" aria-hidden="{{j.dup}}" tabindex="{{j.tab}}" style="flex: none; position: relative; width: clamp(300px, 24vw, 360px); aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden; display: block">
+<img class="jimg" src="{{j.img}}" alt="{{j.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; left: 8px; right: 8px; bottom: 8px; height: 76px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 12px 14px; border-radius: 12px; background-color: rgba(20,20,20,0.32); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid rgba(255,255,255,0.22); box-shadow: inset 0 1px 0 rgba(255,255,255,0.14)">
+<span style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #FFC2C2"><span>{{j.tag}}</span><svg width="18" height="14" viewBox="0 0 46 36" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M1 18 H43"></path><path d="M27 2 C 28 11, 34 17, 43 18 C 34 19, 28 25, 27 34"></path></svg></span>
+<span style="font-family: Figtree, sans-serif; font-size: 16px; line-height: 1.2; font-weight: 300; letter-spacing: -0.01em; color: #FFFFFF; min-height: 2.4em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden">{{j.title}}</span>
+</span>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: #000000; overflow: hidden">
+<div class="bgm1" style="position: absolute; left: -20%; bottom: -60%; width: 90%; height: 160%; border-radius: 50%; background: radial-gradient(circle, rgba(255,72,72,0.9) 0%, rgba(184,30,30,0.6) 30%, rgba(49,12,12,0) 68%); filter: blur(40px)"></div>
+<div class="bgm2" style="position: absolute; right: -25%; bottom: -70%; width: 85%; height: 150%; border-radius: 50%; background: radial-gradient(circle, rgba(224,28,28,0.85) 0%, rgba(91,21,21,0.55) 35%, rgba(0,0,0,0) 70%); filter: blur(50px)"></div>
+<div class="bgm3" style="position: absolute; left: 30%; top: -50%; width: 50%; height: 110%; border-radius: 50%; background: radial-gradient(circle, rgba(255,112,112,0.35) 0%, rgba(0,0,0,0) 65%); filter: blur(40px)"></div>
+</div>
+<div style="position: relative; max-width: 1360px; margin: 0 auto; padding: 160px 40px 140px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px">
+<h2 class="rts" aria-label="Ready to move?" style="margin: 0; font-size: clamp(48px, 8vw, 120px); line-height: 0.95; font-weight: 400; letter-spacing: -0.045em; view-timeline-name: --rts; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 0.18em"><span class="w" aria-hidden="true"><span class="wr" style="transition-delay: 0s">Ready</span></span><span class="w" aria-hidden="true"><span class="wr" style="transition-delay: .08s">to</span></span><span class="rvid" aria-hidden="true" style="display: inline-block; width: 2.3em; height: 0.78em; border-radius: 999px; overflow: hidden; background: #310C0C; box-shadow: 0 0 60px rgba(255,72,72,0.45)"><video ref="{{setVid}}" src="/assets/strength.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" style="width: 100%; height: 100%; object-fit: cover; display: block"></video></span><span class="w" aria-hidden="true"><span class="wr wb" style="transition-delay: 1.35s"><i>move?</i></span></span></h2>
+<p class="rtsAfter" style="margin: 0; font-size: 19px; line-height: 1.5; color: #FFE0E0; max-width: 480px">New here? Your first 5 classes are $50.</p>
+<div class="rtsAfter rtsCta" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<a href="#" class="btn" style="padding: 16px 30px; border-radius: 999px; background-color: #FFFFFF; color: #000000; font-size: 16px; font-weight: 600">Book a class</a>
+<a href="#intro" class="btn glass" style="padding: 16px 26px; border-radius: 999px; background-color: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(14px); font-size: 16px; font-weight: 600">5 classes for $50</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #0D0D0D; border-top: 1px solid rgba(255,255,255,0.1)">
+<div style="max-width: 1360px; margin: 0 auto; padding: 80px 40px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 64px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 48px">
+<form style="flex: 1 1 380px; max-width: 520px; display: flex; flex-direction: column; gap: 16px">
+<img src="/assets/logo-white.png" alt="B/SPOKE" style="height: 22px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A3A3A3">Sign up to receive news and updates.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<label style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #A3A3A3">First name<input type="text" style="padding: 13px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); color: #FFFFFF; font-size: 15px; font-family: inherit"></label>
+<label style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #A3A3A3">Last name<input type="text" style="padding: 13px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); color: #FFFFFF; font-size: 15px; font-family: inherit"></label>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<label style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #A3A3A3">Email address<input type="email" style="padding: 13px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); color: #FFFFFF; font-size: 15px; font-family: inherit"></label>
+<button type="button" class="btn" style="padding: 14px 26px; border-radius: 999px; border: 0; background-color: #FFFFFF; color: #000000; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer">Subscribe</button>
+</div>
+</form>
+<div style="flex: 2 1 560px; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 32px">
+<sc-for list="{{footer}}" as="col" hint-placeholder-count="4">
+<nav aria-label="{{col.title}}" style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; font-size: 13px; color: #737373">{{col.title}}</p>
+<sc-for list="{{col.links}}" as="l" hint-placeholder-count="5">
+<a href="#" style="font-size: 14px; color: #D3D3D3">{{l}}</a>
+</sc-for>
+</nav>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #737373">
+<span>© 2026 B/SPOKE · All rights reserved</span>
+<span style="display: flex; flex-wrap: wrap; gap: 20px"><a href="#" style="color: #A3A3A3">Instagram</a><a href="#" style="color: #A3A3A3">TikTok</a><a href="#" style="color: #A3A3A3">Privacy policy</a><a href="#" style="color: #A3A3A3">Terms of service</a></span>
+</div>
+</div>
+</footer>
+
+</div>
+</template><div id="root"></div><script>
+class DCLogic{constructor(p){this.props=p||{};this.state={}}setState(o){this.state=Object.assign({},this.state,typeof o==='function'?o(this.state):o);schedule()}forceUpdate(){schedule()}}
+let comp,root,tplEl,pending=false;const INERT=document.implementation.createHTMLDocument('');
+function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;render()})}
+function look(path,scope){path=path.trim();if(path==='true')return true;if(path==='false')return false;if(/^-?\d+(\.\d+)?$/.test(path))return +path;if(/^'.*'$/.test(path))return path.slice(1,-1);let v=scope;for(const k of path.split('.')){if(v==null)return undefined;v=v[k]}return v}
+function interp(s,scope){return s.replace(/\{\{([^}]+)\}\}/g,(m,p)=>{const v=look(p,scope);return v==null?'':String(v)})}
+const EV={onclick:'click',onmouseenter:'mouseenter',onmouseleave:'mouseleave',onfocus:'focus',onblur:'blur',onchange:'change',oninput:'input',onkeydown:'keydown',onscroll:'scroll',ontoggle:'toggle',onsubmit:'submit',onpointerenter:'pointerenter'};
+function proc(el,scope){
+ for(const c of Array.from(el.childNodes)){
+  if(c.nodeType===3){if(c.data.includes('{{'))c.data=interp(c.data,scope);continue}
+  if(c.nodeType!==1)continue;
+  const t=c.tagName.toLowerCase();
+  if(t==='sc-for'){const list=look(c.getAttribute('list').replace(/[{}]/g,''),scope)||[];const as=c.getAttribute('as');const frag=INERT.createDocumentFragment();
+   list.forEach((it,i)=>{const wrap=INERT.createElement('div');for(const k of c.childNodes)wrap.appendChild(k.cloneNode(true));proc(wrap,Object.assign(Object.create(scope),{[as]:it,$index:i}));while(wrap.firstChild)frag.appendChild(wrap.firstChild)});c.replaceWith(frag);continue}
+  if(t==='sc-if'){const v=look(c.getAttribute('value').replace(/[{}]/g,''),scope);if(v){const frag=INERT.createDocumentFragment();const wrap=INERT.createElement('div');for(const k of c.childNodes)wrap.appendChild(k.cloneNode(true));proc(wrap,scope);while(wrap.firstChild)frag.appendChild(wrap.firstChild);c.replaceWith(frag)}else c.remove();continue}
+  for(const a of Array.from(c.attributes)){const n=a.name,v=a.value;if(!v.includes('{{'))continue;const whole=v.match(/^\{\{([^}]+)\}\}$/);
+   if(n==='ref'){const f=look(whole[1],scope);c.removeAttribute(n);if(typeof f==='function')refs.push([f,c]);continue}
+   if(EV[n]){const f=look(whole[1],scope);c.removeAttribute(n);if(typeof f==='function')c.addEventListener(EV[n],f);continue}
+   if(whole){const val=look(whole[1],scope);if(val===false||val==null)c.removeAttribute(n);else c.setAttribute(n,val===true?'':String(val))}else c.setAttribute(n,interp(v,scope))}
+  for(const a of Array.from(c.attributes)){if(EV[a.name]){c.removeAttribute(a.name)}}
+  proc(c,scope)}}
+let refs=[];
+function render(){refs=[];const vals=comp.renderVals();const clone=tplEl.content.cloneNode(true);const wrap=INERT.createElement('div');wrap.appendChild(INERT.importNode(clone,true));
+ wrap.querySelectorAll('helmet').forEach(h=>h.remove());proc(wrap,vals);
+ // preserve data-in attrs
+ const keep=new Map();root.querySelectorAll('[data-in]').forEach(e=>{});
+ root.replaceChildren(...wrap.childNodes);refs.forEach(([f,e])=>f(e));if(window.__afterRender)window.__afterRender()}
+window.addEventListener('DOMContentLoaded',()=>{tplEl=document.getElementById('tpl');
+ const h=document.createElement('div');h.innerHTML=tplEl.innerHTML.match(/<helmet>([\s\S]*?)<\/helmet>/)[1];for(const n of Array.from(h.children))document.head.appendChild(n);
+ root=document.getElementById('root');const p={};comp=new Component(p);render();if(comp.componentDidMount)comp.componentDidMount()});
+
+class Component extends DCLogic {
+componentDidMount() {
+this.onScroll = () => {
+const el = this.progEl; if (!el) return;
+const r = el.getBoundingClientRect();
+const span = r.height - Math.min(window.innerHeight, 760);
+if (span <= 0) return;
+const p = Math.min(0.999, Math.max(0, (96 - r.top) / span));
+const idx = Math.floor(p * 5);
+if ((this.state && this.state.prog) !== idx && r.top < window.innerHeight && r.bottom > 0) this.setState({ prog: idx });
+};
+this.onCards = () => {
+const els = this.cardEls || []; if (els.length < 2) return;
+const cov = els.map((el, i) => { const nx = els[i + 1]; if (!el || !nx) return 0; const a = el.getBoundingClientRect(), b = nx.getBoundingClientRect(); const v = (a.bottom - b.top) / a.height; return Math.round(Math.min(1, Math.max(0, v)) * 25) / 25; });
+const prev = (this.state && this.state.cov) || [];
+if (cov.some((v, i) => v !== (prev[i] || 0))) this.setState({ cov });
+};
+window.addEventListener('scroll', this.onScroll, { passive: true });
+window.addEventListener('scroll', this.onCards, { passive: true });
+this.onDeck = () => {
+const el = this.deckEl; if (!el) return;
+const r = el.getBoundingClientRect();
+const span = r.height - Math.min(window.innerHeight, 860);
+const p = span > 0 ? Math.min(1, Math.max(0, (76 - r.top) / span)) : 0;
+const q = Math.round(p * 100) / 100;
+if ((this.state && this.state.deckP) !== q) this.setState({ deckP: q });
+};
+this.onBg = () => {
+const mid = window.innerHeight / 2; let bg = '#000000';
+document.querySelectorAll('[data-bg]').forEach((sec) => { const r = sec.getBoundingClientRect(); if (r.top <= mid && r.bottom >= mid) bg = sec.getAttribute('data-bg'); });
+if ((this.state && this.state.pageBg) !== bg) this.setState({ pageBg: bg });
+};
+window.addEventListener('scroll', this.onDeck, { passive: true });
+window.addEventListener('scroll', this.onBg, { passive: true });
+this.onStud = () => {
+const el = this.studEl; if (!el) return;
+const r = el.getBoundingClientRect();
+const span = r.height - (window.innerHeight - 76);
+if (span <= 0 || r.top > 76 || r.bottom < window.innerHeight) return;
+const p = Math.min(0.999, Math.max(0, (76 - r.top) / span));
+const idx = Math.floor(p * 5);
+if (idx !== this.lastStud) { this.lastStud = idx; this.setState({ studio: idx }); }
+};
+window.addEventListener('scroll', this.onStud, { passive: true });
+this.io = new IntersectionObserver((entries) => { entries.forEach((en) => { if (en.isIntersecting) { en.target.setAttribute('data-in', ''); } else if (en.boundingClientRect.top > 0) { en.target.removeAttribute('data-in'); } }); }, { threshold: 0.2 });
+this.ioScan = () => { document.querySelectorAll('.wv, .wvl, .io, .rts').forEach((el) => { if (!el.__ioOn) { el.__ioOn = true; this.io.observe(el); } }); };
+this.ioScan(); setTimeout(this.ioScan, 600);
+this.snakeIO = new IntersectionObserver((entries) => { entries.forEach((en) => { const anim = document.getElementById('snakeAnim'); if (en.isIntersecting) { if (!en.target.hasAttribute('data-in')) { en.target.setAttribute('data-in', ''); if (anim && anim.beginElement) anim.beginElement(); } } else if (en.boundingClientRect.top > 0) { en.target.removeAttribute('data-in'); } }); }, { threshold: 0.3 });
+setTimeout(() => { const sb = document.querySelector('.snakeBand'); if (sb) this.snakeIO.observe(sb); }, 300);
+}
+componentWillUnmount() {
+if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
+if (this.onCards) window.removeEventListener('scroll', this.onCards);
+if (this.onDeck) window.removeEventListener('scroll', this.onDeck);
+if (this.onBg) window.removeEventListener('scroll', this.onBg);
+if (this.onStud) window.removeEventListener('scroll', this.onStud);
+if (this.io) this.io.disconnect();
+if (this.snakeIO) this.snakeIO.disconnect();
+}
+renderVals() {
+const B_MAP = {"01cd897cf76765f0de2356460d79c581": "web-c4.jpg", "16be6f6d1135ce18cd22e133232dd447": "lehman-04022-1.jpg", "18bfc899886ad9e14a8fdeff970395ca": "wellesley.jpg", "1ffcbe9ea9cc113232e359aa75292055": "studios-map.jpg", "25c07a4998a5c2b9dcb3c5243b1a22de": "web-c2.jpg", "27fb6933f613ac3ff49794322b7b4169": "img-1745-1.jpg", "340d4f10feb920d6cc64331dc92b8f04": "web-c8.jpg", "35516d4d68c92584edad10ad29f2fd62": "yoga.mp4", "36b6b74412afd23ee8feea506a0ab298": "south.jpg", "38aed9815d84c7b10f614735144812ae": "pilates-card.jpg", "38f2987d054a4ff38e82820843059bf3": "web-j1.jpg", "3dffcf39a27bb65442a82565b4b289de": "ride-card.jpg", "4a9f6e7101f8d0044dc4f4bac18aa176": "web-j2.jpg", "4f651daf6e776e81f7e8bf36eb911427": "yoga-overlay.jpg", "5bc07d89505f01b0a230ee275017cf37": "lehman-03930-2.jpg", "67badb58688d6a7d0435a8fd58302b62": "ride.mp4", "6bf1fa09b1257d887d8691fbd4f17f9f": "hero-hq-poster.jpg", "6f27df0051b0054916a7ee71b7cfef41": "downtown.jpg", "71c5188d45a7c37dd11b4c65b05c9354": "web-c5.jpg", "7855591f31f5af047ccf5f62eaac5176": "strength.mp4", "850d768344132c30278866beb76698c4": "logo-white.png", "9d251f60e2ee9a41380c488f4a368925": "web-c1.jpg", "a32fa71ea2225b334499e54a86c550e6": "web-j3.jpg", "a4a720ca178b521d5487b29f15891421": "dashboard-alpha.png", "a5d38637d76595c0e20eba7ca4ae62c3": "web-c3.jpg", "abaee8fff3ec875235acc7150e9a3445": "schedule-alpha.png", "ae7453e3b355eb1d3e338747e529412a": "east.jpg", "afbd3c7afacbd9693284834201a5d0fe": "difference-card-4.jpg", "b9ee75f77a108b91913d734caa30f7fe": "hero-hq.mp4", "be4f036c987f2fe2a03a924db08ca19a": "lehman-04094.jpg", "cd857716ec7d704155056eb95bdd8c2c": "img-7055.jpg", "d3c152fab9be955407c6c2fbc169e3ac": "recovery.jpg", "defc3146bea5edeb2bcfdbdbbd85fe59": "web-c7.jpg", "eb1f749893e418fcfaaa4b68d706b6d7": "web-c6.jpg", "ec60ef833d6b98815b25f4ef66535b8b": "cape.jpg", "fb1aaf5b20a375ae3f92e4e5916719e6": "lehman-08693-2.jpg"};
+const b = (id) => '/assets/' + (B_MAP[id] || id);
+const range = (i) => 'animation-range: entry ' + (i * 6) + '% cover ' + (24 + i * 6) + '%;';
+const words = ['Strength', 'Yoga', 'Pilates', 'Ride', 'Recovery'];
+const marquee = [];
+for (let k = 0; k < 2; k++) words.forEach((t, i) => marquee.push({ t, style: i % 2 ? 'color: #FFFFFF' : 'color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.55)' }));
+const programs = [
+{ name: 'Pilates', text: 'Build core strength, improve alignment and boost confidence with controlled, full-body movement.', img: '/assets/pilates-card.jpg', alt: 'Pilates class on mats' },
+{ name: 'Ride', vid: '/assets/ride.mp4', text: 'A rhythm-driven cycling class that works your whole body and keeps your heart pounding.', img: '/assets/ride-card.jpg', alt: 'Indoor cycling class' },
+{ name: 'Recovery', text: 'Contrast therapy and infrared sauna to reduce inflammation and accelerate recovery.', img: '/assets/recovery.jpg', alt: 'Cold plunge in a tiled recovery room' },
+{ name: 'Strength', vid: '/assets/strength.mp4', text: 'Lift more, rest less, boost your stamina and leave feeling stronger than before.', img: '/assets/lehman-04094.jpg', alt: 'Strength class with dumbbells' },
+{ name: 'Yoga', vid: '/assets/yoga.mp4', text: 'A vinyasa-based practice for all levels, with intelligent and effective sequencing.', img: '/assets/yoga-overlay.jpg', alt: 'Member holding a yoga pose' }
+].map((p, i) => { const on = (this.state && this.state.prog != null ? this.state.prog : 0) === i; return { ...p, hasVid: !!p.vid, chars: p.name.split('').map((c, k, arr) => ({ c, d: 'transition-delay: ' + (k * 0.035).toFixed(3) + 's;', g: 'background-size: ' + (arr.length * 0.5).toFixed(2) + 'em 100%; background-position: -' + (k * 0.5).toFixed(2) + 'em 0;' })), rowCls: on ? 'prow on' : 'prow', n: '0' + (i + 1), active: on, pick: () => this.setState({ prog: i }), nameColor: on ? '#FFFFFF' : '#525252', numColor: on ? '#FF7070' : '#525252', shift: on ? '8px' : '0px', ringColor: on ? '#FFFFFF' : 'rgba(255,255,255,0.2)', ringBg: on ? '#FFFFFF' : 'rgba(255,255,255,0)', arrowColor: on ? '#FF4848' : '#525252', imgOpacity: on ? 1 : 0, imgScale: on ? 1 : 1.08 }; });
+const progActive = programs[(this.state && this.state.prog) || 0].name;
+const social = [
+{ img: '/assets/web-c1.jpg', tag: 'Instagram', alt: 'Community group photo under neon lights' },
+{ img: '/assets/web-c2.jpg', tag: 'Instagram', alt: 'Post: let’s make working out your favorite part of the day' },
+{ img: '/assets/web-c3.jpg', tag: 'Instagram', alt: 'Members posing in the studio' },
+{ img: '/assets/web-c4.jpg', tag: 'Instagram', alt: 'Two members flexing after a ride' },
+{ img: '/assets/web-c5.jpg', tag: 'TikTok', alt: 'Instructor assisting a stretch' },
+{ img: '/assets/web-c6.jpg', tag: 'TikTok', alt: 'Large group celebrating at an event' },
+{ img: '/assets/web-c7.jpg', tag: 'TikTok', alt: 'Instructor selfie in the studio' },
+{ img: '/assets/web-c8.jpg', tag: 'TikTok', alt: 'Members training together' }
+].map((s, i) => ({ ...s, ry: 'transform: rotateY(' + (i * 45) + 'deg) translateZ(330px);', h: '', range: 'animation-range: entry ' + (i % 4) * 8 + '% cover ' + (30 + (i % 4) * 8 + Math.floor(i / 4) * 6) + '%; --r0: ' + [-14, 9, -7, 12, 10, -12, 8, -9][i] + 'deg; --r1: ' + 0 + 'deg; --y0: ' + (-220 - (i % 4) * 40) + 'px;', tagBg: s.tag === 'Instagram' ? '#FF4848' : '#FFFFFF', tagFg: '#000000' }));
+const journal = [
+{ title: 'Meet Yoga: Power', text: 'A fiery, athletic vinyasa practice rooted in strength, stamina and intentional movement.', img: '/assets/web-j1.jpg', alt: 'Yoga class in the studio' },
+{ title: '10 Strong: the science behind 2:2:1 cross-training', text: 'A 10-week, routine-building experience designed to make progress consistent.', img: '/assets/web-j2.jpg', alt: 'Strength class in session' },
+{ title: 'Pilates Fusion: your new workout essential', text: 'A 45-minute, music-driven, low-impact class for balance in your training.', img: '/assets/web-j3.jpg', alt: 'Pilates fusion class' }
+].map((j, i) => ({ ...j, range: range(i) }));
+const st = this.state || {};
+const stI = st.studio != null ? st.studio : 0;
+const studioData = [
+{ name: 'Wellesley', addr: '50 Central St, Wellesley, MA 02482', email: 'wellesley@bspokestudios.com', x: 0.2694, y: 0.2195, img: '/assets/wellesley.jpg', alt: 'Inside the B/SPOKE Wellesley studio' },
+{ name: 'Downtown Boston', addr: '101 Federal St, Boston, MA 02110', email: 'downtownboston@bspokestudios.com', x: 0.4185, y: 0.1698, img: '/assets/downtown.jpg', alt: 'Entrance of B/SPOKE Downtown Boston' },
+{ name: 'East Boston', addr: '125 Sumner St, East Boston, MA 02128', email: 'eastboston@bspokestudios.com', x: 0.4297, y: 0.1583, img: '/assets/east.jpg', alt: 'Storefront of B/SPOKE East Boston' },
+{ name: 'South Boston', addr: '54 Old Colony Ave, Boston, MA 02127', email: 'southboston@bspokestudios.com', x: 0.4207, y: 0.1881, img: '/assets/south.jpg', alt: 'Lobby of B/SPOKE South Boston' },
+{ name: 'Cape Cod', addr: '1 Market St, Mashpee, MA 02649', email: 'capehouse@bspokestudios.com', x: 0.7795, y: 0.7874, img: '/assets/cape.jpg', alt: 'The Cape House, B/SPOKE Cape Cod' }
+];
+const studios = studioData.map((d, i) => { const on = i === stI; return { ...d, n: i + 1, pick: () => this.setState({ studio: i }), pos: 'left: ' + (d.x * 100).toFixed(2) + '%; top: ' + (d.y * 100).toFixed(2) + '%;', size: on ? '40px' : '16px', halo: on ? 'rgba(255,72,72,0.25)' : 'rgba(255,72,72,0)', iconOp: on ? 1 : 0, ring: on ? '#FF4848' : '#FF7070', chipRing: on ? '#FF4848' : 'rgba(255,255,255,0.35)', bg: on ? '#FF4848' : '#0A0A0A', chip: on ? 'rgba(255,72,72,0.25)' : 'rgba(255,255,255,0.04)', sc: on ? 1.15 : 1 }; });
+const dp = st.deckP || 0;
+const baseRot = [-4, 3, -2, 4, -3, 2, -4, 1];
+const deckCols = [0, 1, 2].map((c) => {
+const items = social.filter((_, i) => i % 3 === c);
+const n = items.length;
+const cards = items.map((d, j) => {
+const last = j === n - 1;
+const local = Math.min(1, Math.max(0, (dp - c * 0.06) / 0.8));
+const t = last ? 0 : Math.min(1, Math.max(0, local * (n - 0.3) - j));
+const e = t * t;
+const dx = c === 0 ? -1 : c === 2 ? 1 : (j % 2 ? 1 : -1) * 0.35;
+const rot = baseRot[(c * 3 + j) % 8];
+return { ...d, style: 'z-index: ' + (n - j) + '; transform: translate(' + (dx * e * 620).toFixed(0) + 'px, ' + (-e * 560).toFixed(0) + 'px) rotate(' + (rot + (dx || 1) * e * 30).toFixed(1) + 'deg); opacity: ' + (1 - e * 0.35).toFixed(2) + ';' };
+});
+return { cards };
+});
+return {
+pageBg: st.pageBg || '#000000',
+studios,
+stA: studios[stI],
+setStudEl: this.setStudEl || (this.setStudEl = (el) => { this.studEl = el; }),
+mapX: (studioData[stI].x * 576).toFixed(2) + '%',
+mapY: (studioData[stI].y * 576).toFixed(2) + '%',
+deckCols,
+setDeckEl: this.setDeckEl || (this.setDeckEl = (el) => { this.deckEl = el; }),
+waveSets: [
+{ cls: 'ws1', txt: 'Strength \u00b7 Yoga \u00b7 Pilates \u00b7 Ride \u00b7 Recovery \u00b7 Strength \u00b7 Yoga \u00b7 Pilates \u00b7 Ride \u00b7 Recovery \u00b7' },
+{ cls: 'ws2', txt: '5 studios \u00b7 Downtown Boston \u00b7 East Boston \u00b7 South Boston \u00b7 Wellesley \u00b7 Cape Cod \u00b7' },
+{ cls: 'ws3', txt: 'Come as you are \u00b7 leave stronger \u00b7 Come as you are \u00b7 leave stronger \u00b7 Come as you are \u00b7' }
+],
+setProgEl: this.setProgEl || (this.setProgEl = (el) => { this.progEl = el; }),
+jLoop: [0, 1, 2, 3].flatMap((rep) => journal.map((j, i) => ({ ...j, n: '0' + (i + 1), tag: ['Yoga', 'Strength', 'Pilates'][i], dup: rep > 0 ? 'true' : 'false', tab: rep > 0 ? '-1' : '0' }))),
+progActive,
+ringItems: social.concat(social.slice(0, 4)).map((it, i) => ({ ...it, ry: 'transform: rotateY(' + (i * 30) + 'deg) translateZ(' + 'clamp(420px, 40vw, 600px)' + ');' })),
+phones: [
+{ src: '/assets/schedule-alpha.png', alt: 'B/SPOKE app class schedule', cls: 'fl', pos: 'top', wrap: 'flex: 0 1 190px; min-width: 0;', tilt: 'transform: rotateY(16deg) rotateZ(-1deg);' },
+{ src: '/assets/dashboard-alpha.png', alt: 'B/SPOKE app dashboard', cls: 'fr', pos: 'top', wrap: 'flex: 0 1 190px; min-width: 0;', tilt: 'transform: rotateY(-16deg) rotateZ(1deg);' }
+],
+beams: [6, 14, 23, 33, 44, 56, 67, 78, 88, 95].map((l, i) => ({ pos: 'left: ' + l + '%; opacity: ' + (i % 3 === 0 ? 0.5 : 0.85) + ';' })),
+memberPoints: ['4 to 30 classes a month', 'Renews monthly · 3-month commitment', 'Top up extra classes at your member rate', 'Guest credits, early booking and retail + recovery discounts (8 classes and up)'],
+packPoints: ['Drop-in, 5, 10 or 25 classes', 'No commitment · pay once', 'Credits last 30 days to 12 months', 'Shareable, and transferable on request'],
+compare: [
+{ k: 'Price per class', m: '$10 – $24', p: '$24 – $31' },
+{ k: 'Options', m: '4, 8, 12, 16 or 30 classes / month', p: 'Drop-in, 5, 10 or 25 classes' },
+{ k: 'Billing', m: 'Monthly, renews automatically', p: 'One-time purchase' },
+{ k: 'Commitment', m: '3 months, then cancel online', p: 'None' },
+{ k: 'Credits expire', m: 'Plan renews every month', p: '30 days to 12 months, by pack' },
+{ k: 'Cancellation window', m: '8 hours', p: '12 hours (standard)' },
+{ k: 'Extras', m: 'Guest credits, early booking, up to 20% retail and 50% recovery discounts', p: 'Shareable credits' }
+],
+pillImgs: ['difference-card-4.jpg', 'lehman-08693-2.jpg', 'img-1745-1.jpg', 'lehman-04022-1.jpg'].map((id, i) => ({ src: 'assets/' + id, delay: 'animation-delay: ' + (i * 2.5) + 's;' })),
+showOffer: !(this.state && this.state.offerClosed),
+dismiss: () => this.setState({ offerClosed: true }),
+setVid: this.setVid || (this.setVid = (el) => { if (!el) return; el.muted = true; el.defaultMuted = true; el.playsInline = true; const p = el.play && el.play(); if (p && p.catch) p.catch(() => {}); }),
+marquee,
+programs,
+social,
+journal,
+difference: [
+{ n: '01 / 04', title: 'Never get stuck in a rut', text: '10+ class styles (and counting) to get stronger, improve cardio health and feel your best, without ever getting bored.', cta: 'Explore classes', img: '/assets/img-1745-1.jpg', alt: 'Instructor with a kettlebell' },
+{ n: '02 / 04', title: 'Your schedule, your terms', text: 'Hundreds of classes every week across multiple studios, so movement fits into your life.', cta: 'See studio schedules', img: '/assets/lehman-08693-2.jpg', alt: 'Member riding an indoor bike' },
+{ n: '03 / 04', title: 'The best instructors in the game', text: 'Always developing their skills, so they can bring you their best and help you reach your goals.', cta: 'Meet our instructors', img: '/assets/lehman-04022-1.jpg', alt: 'Instructor adjusting a member’s pose' },
+{ n: '04 / 04', title: 'A community that feels like home', text: 'No judgment, no cliques: just good vibes, big smiles and people rooting for each other.', cta: 'Follow us on Instagram', img: '/assets/difference-card-4.jpg', alt: 'Group photo of the community in the studio' }
+].map((d, i) => { const c = ((this.state && this.state.cov) || [])[i] || 0; return { ...d, top: 'top: ' + (110 + i * 18) + 'px;', blur: (c * 12).toFixed(1), bright: (1 - c * 0.6).toFixed(2), sc: (1 - c * 0.08).toFixed(3), setRef: this['cr' + i] || (this['cr' + i] = (el) => { this.cardEls = this.cardEls || []; this.cardEls[i] = el; }) }; }),
+footer: [
+{ title: 'Company', links: ['About us', 'FAQs', 'Studio policies', 'Careers', 'Contact us', 'Diversity + inclusion'] },
+{ title: 'Classes', links: ['Strength', 'Yoga', 'Pilates', 'Cycling', 'Recovery'] },
+{ title: 'Studios', links: ['Cape Cod', 'Downtown Boston', 'East Boston', 'South Boston', 'Wellesley'] },
+{ title: 'More', links: ['Retreats', 'The journal', 'Private events', 'Gift cards', 'The shop'] }
+]
+};
+}
+}
+</script></body></html>
