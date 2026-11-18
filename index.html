@@ -648,7 +648,7 @@ function proc(el,scope){
   for(const a of Array.from(c.attributes)){if(EV[a.name]){c.removeAttribute(a.name)}}
   proc(c,scope)}}
 
-const KEEP_ATTR=new Set(['data-in']);
+const KEEP_ATTR=new Set(['data-in','open']);
 function sameNode(a,b){return a.nodeType===b.nodeType&&(a.nodeType!==1||a.tagName===b.tagName)}
 function morphKids(oldP,newP,map){const o=Array.from(oldP.childNodes),n=Array.from(newP.childNodes);
  for(let i=0;i<n.length;i++){const nn=n[i],on=o[i];
@@ -664,8 +664,6 @@ function morphNode(on,nn,map){map.set(nn,on);
 let refs=[];
 function render(){refs=[];const vals=comp.renderVals();const clone=tplEl.content.cloneNode(true);const wrap=INERT.createElement('div');wrap.appendChild(INERT.importNode(clone,true));
  wrap.querySelectorAll('helmet').forEach(h=>h.remove());proc(wrap,vals);
- // preserve data-in attrs
- const keep=new Map();root.querySelectorAll('[data-in]').forEach(e=>{});
  if(!root.firstChild){root.replaceChildren(...wrap.childNodes);refs.forEach(([f,e])=>f(e))}else{const map=new Map();morphKids(root,wrap,map);refs.forEach(([f,e])=>f(map.get(e)||e))}if(window.__afterRender)window.__afterRender()}
 window.addEventListener('DOMContentLoaded',()=>{tplEl=document.getElementById('tpl');
  const h=document.createElement('div');h.innerHTML=tplEl.innerHTML.match(/<helmet>([\s\S]*?)<\/helmet>/)[1];for(const n of Array.from(h.children))document.head.appendChild(n);
